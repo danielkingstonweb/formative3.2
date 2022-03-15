@@ -6,6 +6,11 @@ const mongoose = require('mongoose'); // Includes mongoose
 const bcrypt = require('bcryptjs'); // Includes bcrypt
 const cors = require('cors'); // Includes cors
 const config = require('./config.json');
+//Database collection variables (product is for testing, user is for stretch goal and portfolios is the one we are using)
+const Product = require('./models/product.js');
+const User = require('./models/user.js');
+const Portfolios = require('./models/portfolios');
+
 
     // Backend port number
 const port = 5000;
