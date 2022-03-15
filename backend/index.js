@@ -12,7 +12,7 @@ const User = require('./models/user.js');
 const Portfolios = require('./models/portfolios');
 
 
-    // Backend port number
+// Backend port number
 const port = 5000;
 
 
@@ -25,6 +25,7 @@ app.use(cors()); // Calling cors method with express
 app.get('/', (req,res) => res.send('Hello! I am from the backend baybeeeeee'))
 
 
-mongoose.connect(`mongodb+srv://${config.MONGO_USER}:${config.MONGO_PASSWORD}@cluster0.${config.MONGO_CLUSTER_NAME}.mongodb.net${config.MONGO_DBNAME}?retryWrites=true&w=majority`, {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>console.log('DB Connected')).catch(err=>{
-    console.log(`DB Connection Error ${err.message}`);
+mongoose.connect(`mongodb+srv://${config.MONGO_USER}:${config.MONGO_PASSWORD}@teamWork.${config.MONGO_CLUSTER_NAME}.mongodb.net/${config.MONGO_DBNAME}?retryWrites=true&w=majority`, {useNewUrlParser:true,useUnifiedTopology: true}).then(()=>console.log('DB Connected!'))
+.catch(err=>{
+  console.log(`DB Connection Error:${err.message}`); 
 });
