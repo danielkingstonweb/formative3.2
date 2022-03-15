@@ -81,7 +81,7 @@ app.post('/addPortfolios',(req,res)=>{
       res.send(result);
     }).catch(err=>res.send(err));
   })
-  // <--!add portfolios function code ends here -->
+
 
   
 // Get all Portfolios for the Database
@@ -90,3 +90,44 @@ app.get('/allPortfoliosFromDB',(req,res)=>{
       res.send(result);
     })
   })
+
+// <--!add portfolios function code ends here -->
+
+// <--!update portfolios function code starts here -->
+
+//patch is to update the details of the portfolio objects
+app.patch('/updatePortfolios/:id',(req,res)=>{
+    const idParam = req.params.id;
+    Portfolios.findById(idParam,(err,product)=>{
+        const updatedPortfolios = {
+          name : req.body.name,
+          author : req.body.author,
+          image_url: req.body.image_url,
+          user_url: req.body.user_url,
+          desc: req.body.desc,
+        }
+        Portfolios.updateOne({_id:idParam}, updatedPortfolios).
+        then(result=>{
+          res.send(result);
+        }).catch(err=> res.send(err));
+    })
+  })
+
+  // <--!update portfolios function code ends here -->
+
+// <--!delete portfolios function code starts here -->
+// Delete Portfolios from db
+app.delete('/deletePortfolios/:id',(req,res)=>{
+    const idParam = req.params.id;
+    Portfolios.findOne({_id:idParam}, (err,portfolios)=>{
+      if(portfolios){
+        Portfolios.deleteOne({_id:idParam},err=>{
+          console.log('deleted on backend request');
+        });
+      } else {
+        alert('not found');
+      }
+    }).catch(err=> res.send(err));
+  });//delete
+
+// <--!delete portfolios function code ends here -->
