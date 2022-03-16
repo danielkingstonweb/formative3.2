@@ -35,3 +35,99 @@ mongoose.connect(`mongodb+srv://${config.MONGO_USER}:${config.MONGO_PASSWORD}@te
   console.log(`DB Connection Error:${err.message}`); 
 });
 // <--! Mongoose url code ends here -->
+
+// <--! port listening code starts here -->
+app.listen(port,()=>console.log(`My fullstack application is listening on port ${port}`))
+// <--! port listening code ends here -->
+
+
+// <--! test function code starts here -->
+// adding products- for testing purposes only (will be deleted on final commit)
+app.post('/addProduct',(req,res)=>{
+    const dbProduct = new Product({
+      _id: new mongoose.Types.ObjectId,
+      name: req.body.name,
+      price: req.body.price,
+      image_url: req.body.image_url
+    });
+    // save to database and to notify the user
+    dbProduct.save().then(result=>{
+      res.send(result);
+    }).catch(err=>res.send(err));
+  })
+
+// Get all Products for the Database
+app.get('/allProductsFromDB',(req,res)=>{
+    Product.find().then(result=>{
+      res.send(result);
+    })
+  })
+
+// <--! test function code ends here -->
+
+// <--!add portfolios function code starts here -->
+app.post('/addPortfolios',(req,res)=>{
+    const dbPortfolios = new Portfolios({
+      _id: new mongoose.Types.ObjectId,     
+      name : req.body.name,
+      author : req.body.author,
+      image_url: req.body.image_url,
+      user_url: req.body.user_url,
+      desc: req.body.desc,
+      // this last element called 'desc' is for adding a description to cards if needed, can be removed if not
+    });
+    // save to database and to notify the user
+    dbPortfolios.save().then(result=>{
+      res.send(result);
+    }).catch(err=>res.send(err));
+  })
+
+
+  
+// Get all Portfolios for the Database
+app.get('/allPortfoliosFromDB',(req,res)=>{
+    Portfolios.find().then(result=>{
+      res.send(result);
+    })
+  })
+
+// <--!add portfolios function code ends here -->
+
+// <--!update portfolios function code starts here -->
+
+//patch is to update the details of the portfolio objects
+app.patch('/updatePortfolios/:id',(req,res)=>{
+    const idParam = req.params.id;
+    Portfolios.findById(idParam,(err,product)=>{
+        const updatedPortfolios = {
+          name : req.body.name,
+          author : req.body.author,
+          image_url: req.body.image_url,
+          user_url: req.body.user_url,
+          desc: req.body.desc,
+        }
+        Portfolios.updateOne({_id:idParam}, updatedPortfolios).
+        then(result=>{
+          res.send(result);
+        }).catch(err=> res.send(err));
+    })
+  })
+
+  // <--!update portfolios function code ends here -->
+
+// <--!delete portfolios function code starts here -->
+// Delete Portfolios from db
+app.delete('/deletePortfolios/:id',(req,res)=>{
+    const idParam = req.params.id;
+    Portfolios.findOne({_id:idParam}, (err,portfolios)=>{
+      if(portfolios){
+        Portfolios.deleteOne({_id:idParam},err=>{
+          console.log('deleted on backend request');
+        });
+      } else {
+        alert('not found');
+      }
+    }).catch(err=> res.send(err));
+  });//delete
+
+// <--!delete portfolios function code ends here -->
