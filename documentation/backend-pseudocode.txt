@@ -1,0 +1,81 @@
+Pseudo-Code for the backend files
++++++++++++++++++++++++++++++++++
+Note that the Portflios constant usually refers to a single Portfolio object, it is named using a plural as I was using the same naming convention
+that Products and Users were in the source code.
+
+INDEX.JS
+---------------------------------
+Global variables===
+This javascript file starts with a list of global constant variables needed to run the backend and connect to node dependancies (eg. const mongoose, const express)
+
+Starting at line 11 are three variables (Product, Portfolios and User) that conect to the schemas (code schematics) that model the User, Portfolio and Product objects for 
+the backend.
+The only oen ofthese in use at the moment is "const Portfolios," this is the variable that connects to where Portfolio objects are stored on MongoDB and outlines how Portfolio objects are set out.
+(See portfolios.js below).
+The User variable and associated model is for a stretch goal of having users register and login onto our portfolio displaying app.
+The Product varaible, associated model and associated functinos, are for testing only and will be removed in the final version, as will the User variable if there is not enough
+time to make use of it.
+
+Below that is the port varaible, which tells the terminal what port to keep watch on. Do not change this.
+
+mongoose adress function===
+
+On line 36 starts a function that connects to the mongoose dependancy to create an SRV adress for the web application using the authentication data found in config.JSON in the backend combined with cluster
+information from the MongoDB database.
+Below this is coded an error function that shows up i nthe terminal if here are errors in this adress.
+
+Bodyparser function===
+Next is a series of commands that define how the bodyParser function is to be used. Do not change this.
+
+Testing functions===
+From line 44 to 66 is the code for testing the backend using the Product model. This will be removed in the final version and has no imapct on the front end.
+
+addPortfolios function (adress partial '/addPortfolios')===
+Starting at line 68 (change this when Product functions above are removed) is a function that posts a new portfolio to be stored in the Database on MongoDB. In the brackets on line 69 is a partial adress ('/addPortfolios'),
+which is added to the full url determined above. This uses the POST html method.
+This uses the variable dbPortfolios, which stores data for a new Portfiolos object drawing from the Portfolios model parameters incldued below on lines 71-76.
+
+The dbPortfolios variable is then saved and sent to the database on line 80-83.
+
+
+getAllPortfolios function (adress partial '/getAllPortfolios') ===
+Starting at line 88 is a function that uses the GET html method to go and seek out all avbailable Portfolios objects on the MongoDB cluster.
+It finds these protfolios then sends the results to the frontend.
+
+Update Portfolios function (adress partial '/updatePortfolios:id' - the id being a palceholder for the id of the specific portfolio object) ===
+Starting at line 99 is a function that uses the PATCH html method to upade an already existing Portfolio stored on the MongoDB cluster. This uses the 
+idParam varable on line 100 to sort the Portfolio objects by id tag. 
+Then it uses the constant updatedPortfolios to take the new information inputted into the paremeter fields on a form in the front end and then uses the updateOne
+method on line 109 to change the stored data on that particular Portfolio on MongoDB.
+
+Delete portfolios function (adress partial '/deletePortfolios:id' - the id being a palceholder for the id of the specific portfolio object') ===
+Starting on line 120 is a function that deletes a particular portfolio object from the MongoDB cluster using the app.delete function. 
+This function uses the idParam variable liek the update Portfolios function above to sort through the Mongo database to find the correct Portfolios object that the user 
+wishes to delete. It takes the id input from the fontend and deletes it from the MongoDB cluster using the deleteOne function.
+--------------------------------------------------------------------------------------------------------------------------------------
+
+PORTFOLIO.JS
++++++++++++
+
+This javascript file is located within the models folder inside the backend.
+One line one is makes use of mongoose and calls it in with a cosntant.
+
+Starting on line 3 the file contains a cosntant called Portfoliosschema that makes use of a new mongoose.schema framework to lay out 
+the parameters of the Protfolios objects, which it lists as an array with the required data type next to it (example, "name : String" defines that
+the 'name' parameter requires string data). 
+This schema states that the Portfolios obejcts have five parameters with the associated ids: _id (set by MongoDB not the user when an object is 
+uploaded to the database), name (set in a input field as string data on the frontend by the user), author (set in a input field as string data on the frontend by the user),
+image_url (set in a input field as string data on the frontend by the user, requires a url link to a digital image), user url (set in a input field as string data on the frontend by the user, 
+requires a url link), desc (set in a input field as string data on the frontend by the user).
+
+On line 12 the data in the above model is defined as an object type called Portfolios and exported to the rest of the backend by mongoose.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+CONFIG.JSON
++++++++++
+
+This javascript JSON file is located in the backend folder. 
+
+It contains a JSON array that determines the credentials for the mongoDB database user. Please do not change these credentials as they are needed
+for the apllication to work correctly. 
+-------------------------------------------------------------------------------------------------------------------------------------------
