@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/9ece9c9672.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.typekit.net/tck2get.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -12,10 +13,6 @@
 
     <!-- start of navigation -->
     <nav class="nav">
-        <div class="nav-search">
-            <h5 class="nav-search__left">searchbar</h5>
-            <h5 class="nav-search__right">login/signup</h5>
-        </div>
         <div class="nav-header">
             <h1 class="nav-header__text">portfolio</h1>
         </div>
@@ -32,17 +29,35 @@
     
     <!-- start of hero image -->
     <section class="hero">
-        <div class="hero-img"></div>
+        <div class="hero-img">
+            <h1 class="hero-h1">portfolio</h1>
+            <p class="hero-p">A single place for creatives of all mediums to showcase their best work.</p>
+        </div>
     </section>
     <!-- end of hero image -->
 
-    <!-- start of post forms -->
-    <section class="post-form">
-        <div class="post-form__buttons">
-            <button class="add-project post-form__btn" id="addProject">Add Project</button>
-            <button class="delete-project post-form__btn" id="deleteProject">Delete Project</button>
-            <button class="edit-project post-form__btn" id="editProject">Edit Project</button>
+    <!-- start of post form and details -->
+    <section class="form">
+        <div class="form-buttons">
+            <button class="add-project form-buttons__btn" id="addProject">Add Project<i class="fa-solid fa-plus"></i></button>
+
+            <button class="delete-project form-buttons__btn" id="deleteProject">Delete Project<i class="fa-solid fa-xmark"></i></button>
+            
+
+            <button class="edit-project form-buttons__btn" id="editProject">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
         </div>
+        <div class="form-text">
+            <h1 class="form-text__h1">Showcase your work</h1>
+        </div>
+        <div class="form-filtering">
+            <h1 class="form-filtering__filters">Filters<i class="fa-solid fa-filter"></i></h1>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="searchbar" id="searchBar" type="text">
+        </div>
+    </section>
+
+    <section class="potd">
+
     </section>
 
     <!-- end of post forms -->
