@@ -2,7 +2,7 @@
 //these functions will be copy pasted into the main script when complete
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-console.log('linked');// checks script is linked to the html
+console.log('linked');
 console.log(sessionStorage);
 // <--! Global backend constants start here !-->
 
