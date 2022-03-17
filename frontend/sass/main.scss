@@ -1,16 +1,192 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 body {
-    background: rgb(226, 189, 189);
+  overflow-x: hidden;
+  background: rgb(226, 189, 189);
+}
+
+
+// nav bar start
+.nav{
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  background: rgb(235, 235, 235);
+
+
+  &-header{
+
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+    &__text {
+      font-family: forma-djr-micro, sans-serif;
+      font-weight: 700;
+      /* font-weight: 500; */
+      font-style: normal;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      padding-left: 2rem;
+    
+    }
   }
+
+
+  &-navigation{
+    height: 10vh;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__ul{
+      list-style-type: none;
+      display: flex;
+    } // end of ul
+    &__li {
+      font-family: sculpin, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      text-transform: capitalize;
+      cursor: pointer;
+      padding: 0rem 2rem 0rem 0rem;
+    }  // end of li
+
+  } // end of navigation  
+}
+//end of nav
+
+.hero{
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  background: url(../img/lightbulb-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
-  .nav-header__text{
+
+  &-img{
+    padding: 30vh 0vw 30vh 5vw;
+  }
+
+  &-h1{
     font-family: forma-djr-micro, sans-serif;
-    font-weight: 700;
-    /* font-weight: 500; */
+    // font-weight: 700;
+    font-weight: 500;
     font-style: normal;
+    text-transform: uppercase;
+    font-size: 10rem;
   }
-  
-  .nav-navigation__li{
+  &-p{
     font-family: sculpin, sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 2rem;
+    width: 35ch;
   }
+}
+
+.form{
+  height: 6vh;
+  width: 100vw;
+  display: flex;
+  background: rgb(170, 170, 170);
+
+
+  &-buttons{
+    height: 100%;
+    width: 34%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    
+    &__btn{
+      padding: 0.6rem;
+      background: none;
+      border: none;
+      font-family: sculpin, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      cursor: pointer;
+    }
+  }
+  &-text{
+    height: 100%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: forma-djr-micro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  &-filtering{
+    height: 100%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem;
+
+    &__filters{
+      padding-right: 1rem;
+      font-family: sculpin, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1rem;
+    }
+  }
+} 
+
+.fa-solid{
+  padding-left: 0.4rem;
+}
+
+.add-project, .delete-project{
+  border-right: 1px solid black;
+}
+
+.fa-magnifying-glass{
+  padding-right: 0.4rem;
+}
+
+.searchbar{
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: sculpin, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+.searchbar:focus {
+  outline: none;
+  font-family: sculpin, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.potd{
+  height: 70vh;
+  width: 100vw;
+  background: yellow;
+}
+
+.card-container{
+  height: 100vh;
+  width: 100vw;
+  background: blue;
+  overflow-y: scroll;
+}
+
