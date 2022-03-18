@@ -133,6 +133,47 @@ $('#addaPortfolio').click(function(){
     }//if
   })//end
    // <--! function for deleting portfolios ends here  !-->
+   
+ // <--! function for updating portfolios starts here  !-->
+ $('#updateaPortfolio').click(function(){
+    //above is the id tag for the button that runs this function
+   event.preventDefault();
+   let portfoliosId = $('#updPortfoliosid').val();
+   let portfoliosName = $('#updPortfoliosname').val();
+   let portfoliosAuthor = $('#updPortfoliosauthor').val();
+   let imageurl = $('#updImageurl').val();
+   let userurl = $('#updUserurl').val();
+   let portfoliosDesc = $('#updPortfoliosdesc').val();
+   //above are the id tags used for input fields in the update portfolios form
+   console.log(portfoliosId, portfoliosName, portfoliosAuthor, imageurl, userurl, portfoliosDesc);
+   //logs content of the inputs
+   if ( portfoliosId == ''){
+     alert('Please enter portfolio ID for updating');
+     //error fnctino if no id inputted
+   } else {
+     //below is ajax function for sending update PATCH to the database
+     $.ajax({
+       url: `http://${url}/updatePortfolios/${portfoliosId}`,
+       type: 'PATCH',
+       data:{
+         name : portfoliosName,
+         author: portfoliosAuthor,
+         image_url: imageurl,
+         user_url: userurl,
+         desc: portfoliosDesc
+         //above is the model variables getting data from the input dields with these tags
+       },
+       success: function(data){
+         console.log(data);
+         alert('File upated sucessfully');
+       }, //success
+       error: function(){
+         console.log('error: cannot update portfolio');
+       } //error
+     })//ajax
+   }//if
+ })//end
+   // <--! function for updating portfolios ends here  !-->
 
 }) // <--! document ready code ends here -->
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
