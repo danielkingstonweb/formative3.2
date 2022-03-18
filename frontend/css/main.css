@@ -7,7 +7,6 @@
 
 body {
   overflow-x: hidden;
-  background: #e2bdbd;
 }
 
 .nav {
@@ -160,6 +159,39 @@ body {
   height: 70vh;
   width: 100vw;
   background: yellow;
+  display: flex;
+}
+.potd-left {
+  height: 100%;
+  width: 50%;
+  background: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.potd-left__img {
+  height: 90%;
+  width: 90%;
+  background: purple;
+}
+.potd-right {
+  height: 100%;
+  width: 50%;
+  background: burlywood;
+}
+
+.seeprojects {
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seeprojects-txt {
+  font-family: forma-djr-micro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding-top: 2rem;
 }
 
 .card-container {
@@ -167,4 +199,9 @@ body {
   width: 100vw;
   background: blue;
   overflow-y: scroll;
+}
+
+.footer {
+  height: 30vh;
+  width: 100vw;
 }
