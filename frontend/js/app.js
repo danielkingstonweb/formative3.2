@@ -43,7 +43,7 @@ function cardLoad(url) {
       var i;
 
       //below ID tag 'card_Result' is to match the container where the cards appear
-      document.getElementById('card_Result').innerHTML = "";
+      document.getElementById('cardResult').innerHTML = "";
 
       for(i=0;i<portfoliosfromMongo.length;i++){
         document.getElementById('cardResult').innerHTML +=
@@ -60,7 +60,7 @@ function cardLoad(url) {
 
     }
     //above is the append for the cards. this is just a template to be used to create the cards, providing the designer with the right tags.
-    //note - do not add comments between the backticks, they will shwo up in the HTML. 
+    //note - do not add comments between the backticks, they will show up in the HTML. 
 }, 
 error:function(){
   console.log('unable to load portfolios');
@@ -77,11 +77,11 @@ $('#addaPortfolio').click(function(){
    //below are the variables that are used by the portfolio model, they get the right data to add from inputs on the form with the following tags:
    //#portfolio-name, #portfolio-author, #portfolio-imageurl, #portfolio-userurl and #portfolio-desc
    
-    let name = $('#portfolio-name').val(); 
-    let author = $('#portfolio-author').val(); 
-    let image_url = $('#portfolio-imageurl').val(); 
-    let user_url = $('#portfolio-userurl').val(); 
-    let desc = $('#portfolio-desc').val(); 
+    let name = $('#portfolioName').val(); 
+    let author = $('#portfolioAuthor').val(); 
+    let image_url = $('#portfolioImageurl').val(); 
+    let user_url = $('#portfolioUserurl').val(); 
+    let desc = $('#portfolioDesc').val(); 
     console.log(name, author, image_url, user_url, desc); //logs the variables for the model in the console.
     //below is an alert message if a field has not been filled out
     if (name == '' || author == '' || image_url == '' || user_url == '' || desc == ''){
