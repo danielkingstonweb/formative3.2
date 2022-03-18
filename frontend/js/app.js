@@ -46,7 +46,7 @@ function cardLoad(url) {
       document.getElementById('card_Result').innerHTML = "";
 
       for(i=0;i<portfoliosfromMongo.length;i++){
-        document.getElementById('card_Result').innerHTML +=
+        document.getElementById('cardResult').innerHTML +=
         `
         <div style="background-color:gainsboro">
         <img src="${portfoliosfromMongo[i].image_url}" style="width:200px;height:100px;"><br> 
