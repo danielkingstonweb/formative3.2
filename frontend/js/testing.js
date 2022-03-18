@@ -111,28 +111,28 @@ $('#addaPortfolio').click(function(){
  // <--! function for adding portfolios ends here  !-->
 
  // <--! function for deleting portfolios starts here  !-->
- $('#deleteaPortfolio').click(function(){
-    //above is the id tag for the delete button
-    event.preventDefault();
-    let portfoliosId = $('#deletePortfoliosId').val();
-    //above is the id for the input that a user types the IDs to be deleted into
-    console.log(portfoliosId);
-    if (portfoliosId == ''){
-      alert('Please enter the portfolio ID to delete the product');
-    } else {
-      $.ajax({
-        url : `http://${url}/deletePortfolios/${portfoliosId}`,
-        type:'DELETE',
-        success : function(){
-          console.log('deleted');
-        }, //success
-        error:function(){
-          console.log('error: cannot call api');
-        }//error
-      })//ajax
-    }//if
-  })//end
-   // <--! function for deleting portfolios ends here  !-->
+$('#deleteaPortfolio').click(function(){
+  //above is the id tag for the delete button
+  event.preventDefault();
+  let portfoliosId = $('#deletePortfoliosId').val();
+  //above is the id for the input that a user types the IDs to be deleted into
+  console.log(portfoliosId);
+  if (portfoliosId == ''){
+    alert('Please enter the portfolio ID to delete the product');
+  } else {
+    $.ajax({
+      url : `http://${url}/deletePortfolios/${portfoliosId}`,
+      type:'DELETE',
+      success : function(){
+        console.log('deleted');
+      }, //success
+      error:function(){
+        console.log('error: cannot call api');
+      }//error
+    })//ajax
+  }//if
+})//end
+ // <--! function for deleting portfolios ends here  !-->
 
 }) // <--! document ready code ends here -->
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
