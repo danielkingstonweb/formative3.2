@@ -57,6 +57,42 @@ function cardLoad(url) {
   }
   
   })
+
+
+//add a product
+$('#addProject').click(function(){
+  event.preventDefault();
+  let name = $('#portfolioName').val();
+  let author = $('#portfolioAuthor').val();  
+  let image_url = $('#portfolioImageurl').val();
+  let user_url = $('#portfolioUAerurl').val();
+  let desc = $('#portfolioDesc').val();  
+
+  console.log(name,author, image_url, user_url, desc);
+  if (name == '' || author == '' || image_url == '' || user_url == ''|| desc == ''){
+    alert('Please enter all details');
+  } else {
+    $.ajax({
+      url : `http://${url}/addPortfolios`,
+      type : 'POST',
+      data :{
+        name: name,
+        author: author,
+        image_url:image_url,
+        user_url: user_url,
+        desc: desc
+      },
+      success : function(portfolios){
+        console.log(portfolios);
+        alert ('Project added');
+      },
+      error : function(){
+        console.log('error: cannot call api');
+      }//error
+    })//ajax
+  }//else
+});//addProject
+
   }
 
 function projectOfTheDay(){
