@@ -409,3 +409,49 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+.modal-body__add{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.modal-body__left{
+  height: 100%;
+  width: 50%;
+  margin: 0rem 2rem 0rem 1rem;
+}
+
+.modal-body__right{
+  height: 100%;
+  width: 50%;
+  margin-left: 0rem 1rem 2rem 0rem;
+}
+
+.modal-field__add{
+  width: 100%;
+}
+
+.add-project__desc{
+  height: 10rem;
+}
+
+.img-preview{
+  height: 10rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  background: rgb(220, 220, 220);
+  border: 1px solid rgb(159, 159, 159);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.img-preview__txt{
+  color: #676767;
+  display: flex;
+  width: 20ch;
+}
