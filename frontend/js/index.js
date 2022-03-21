@@ -114,6 +114,7 @@ $('#deleteaPortfolio').click(function(){
       type:'DELETE',
       success : function(){
         console.log('deleted');
+        alert('Project Deleted Sucessfully');
       }, //success
       error:function(){
         console.log('error: cannot call api');
