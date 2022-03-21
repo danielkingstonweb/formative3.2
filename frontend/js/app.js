@@ -48,23 +48,7 @@ function cardLoad(url) {
       for(i=0;i<portfoliosfromMongo.length;i++){
         document.getElementById('cardResult').innerHTML +=
         `
-        <div class="card" id="cardStyle" >
-        <div class="card-body"  id="cardStyle_top">
-  <img class="card-img-top" id="cardStyle_img" src="${portfoliosfromMongo[i].image_url}" alt="Card image cap" >
-  </div>
-  <div class="card-body"  id="cardStyle_bottom">
-    <h5 class="card-title"  id="cardStyle_name">${portfoliosfromMongo[i].name}</h5>
-    <h6 class="card-text" id="cardStyle_author">${portfoliosfromMongo[i].author} <p/>
-    <p class="card-text" id="cardStyle_note"><i>These CARDs are only placeholders, go into the app.js to delete these ones and make new ones using the tags</i></p>
-    <p class="card-text"  id="cardStyle_desc">${portfoliosfromMongo[i].desc}</p>
 
-
-
- 
-    <button type="button" href="${portfoliosfromMongo[i].user_url}" class="card-link" id=" id="cardStyle_button">User Website</Button>
-   
-  </div>
-</div>
         `
 
     }
