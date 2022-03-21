@@ -48,7 +48,7 @@ function cardLoad(url) {
       for(i=0;i<portfoliosfromMongo.length;i++){
         document.getElementById('cardResult').innerHTML +=
         `
-
+        
         `
 
     }

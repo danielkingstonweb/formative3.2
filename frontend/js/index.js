@@ -31,10 +31,10 @@ function cardLoad(url) {
         var i;
   
         //below ID tag 'card_Result' is to match the container where the cards appear
-        document.getElementById('cardContainer').innerHTML = "";
+        document.getElementById('cardResult').innerHTML = "";
   
         for(i=0;i<portfoliosfromMongo.length;i++){
-          document.getElementById('cardContainer').innerHTML +=
+          document.getElementById('cardResult').innerHTML +=
           `
           <div class="card">
           <div class="card__img">
