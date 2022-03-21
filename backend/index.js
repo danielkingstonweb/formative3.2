@@ -125,7 +125,7 @@ app.delete('/deletePortfolios/:id',(req,res)=>{
           console.log('deleted on backend request');
         });
       } else {
-        alert('not found');
+        console.log('not found');
       }
     }).catch(err=> res.send(err));
   });//delete
