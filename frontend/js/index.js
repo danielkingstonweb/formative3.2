@@ -59,6 +59,9 @@ function cardLoad(url) {
   })
   }
 
+  function projectOfTheDay(){
+      
+  }
 
 
 })// document.ready function ends here
