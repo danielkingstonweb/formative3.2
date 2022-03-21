@@ -1,3 +1,54 @@
+#cardStyle {
+  width: 30%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1f1e1e;
+  border-radius: 30px;
+}
+#cardStyle_top {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cardStyle_bottom {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #383737;
+}
+#cardStyle_img {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#cardStyle_name {
+  font-size: larger;
+  font-weight: 500;
+  color: white;
+}
+#cardStyle_author {
+  font-size: large;
+  color: white;
+}
+#cardStyle_note {
+  color: yellow;
+  font-size: large;
+}
+#cardStyle_desc {
+  color: white;
+  font-size: medium;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -283,13 +334,7 @@ body {
   font-style: normal;
 }
 
-.about-us__cards {
-  height: 70vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-}
+
 
 .about-us__individual-1 {
   grid-column: 2/5;
