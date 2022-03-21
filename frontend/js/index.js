@@ -59,15 +59,15 @@ function cardLoad(url) {
   })
   }
 
-  function projectOfTheDay(){
+function projectOfTheDay(){
       
-  }
+}
 
 // <--! function for deleting portfolios starts here  !-->
 $('#deleteaPortfolio').click(function(){
   //above is the id tag for the delete button
   event.preventDefault();
-  let portfoliosId = $('#deletePortfoliosId').val();
+  let portfoliosId = $('#deleteProject').val();
   //above is the id for the input that a user types the IDs to be deleted into
   console.log(portfoliosId);
   if (portfoliosId == ''){
@@ -88,7 +88,7 @@ $('#deleteaPortfolio').click(function(){
  // <--! function for deleting portfolios ends here  !-->
  
 // <--! function for updating portfolios starts here  !-->
-$('#updateaPortfolio').click(function(){
+$('#editProject').click(function(){
   //above is the id tag for the button that runs this function
  event.preventDefault();
  let portfoliosId = $('#updPortfoliosid').val();
