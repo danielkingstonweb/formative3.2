@@ -334,7 +334,14 @@ body {
   font-style: normal;
 }
 
-
+.about-us__cards{
+  height: 70vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  
+}
 
 .about-us__individual-1 {
   grid-column: 2/5;
