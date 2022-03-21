@@ -55,12 +55,12 @@
     <!-- start of post form and details -->
     <section class="form">
         <div class="form-buttons">
-            <button type="button" class="add-project form-buttons__btn" id="addProjectBtn" data-bs-toggle="modal" data-bs-target="#addProjectModal">Add Project<i class="fa-solid fa-plus"></i></button>
+            <button type="button" class="add-project form-buttons__btn" id="addPortfolioBtn" data-bs-toggle="modal" data-bs-target="#addPortfolioModal">Add Project<i class="fa-solid fa-plus"></i></button>
 
-            <button type="button" class="delete-project form-buttons__btn" id="deleteProjectBtn" data-bs-toggle="modal" data-bs-target="#deleteProjectModal">Delete Project<i class="fa-solid fa-xmark"></i></button>
+            <button type="button" class="delete-project form-buttons__btn" id="deletePortfolioBtn" data-bs-toggle="modal" data-bs-target="#deletePortfolioModal">Delete Project<i class="fa-solid fa-xmark"></i></button>
             
 
-            <button type="button" class="edit-project form-buttons__btn" id="editProjectBtn" data-bs-toggle="modal" data-bs-target="#editProjectModal">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
+            <button type="button" class="edit-project form-buttons__btn" id="editPortfolioBtn" data-bs-toggle="modal" data-bs-target="#editPortfolioModal">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
         </div>
         <div class="form-text">
             <h1 class="form-text__h1">Showcase your work</h1>
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addPortfolioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -151,7 +151,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" id="addProject">Add Project</button>
+              <button type="submit" class="btn btn-primary" id="addaPortfolio">Add Project</button>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@
 
 
 
-      <div class="modal fade" id="deleteProjectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="deletePortfolioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -171,8 +171,8 @@
             <div class="modal-body">
                 <form id="deletePortfolioForm">
                     <h1> Delete a Portfolio</h1>   <br><br>
-                    <label for="deleteProject"> Delete a Portfolio by ID</label>
-                    <input type="text" id="deleteProject" name="delete-port" >      
+                    <label for="deletePortfolio"> Delete a Portfolio by ID</label>
+                    <input type="text" id="deletePortfolioInput" name="delete-port" >      
                     <!-- this is the id needed for the input to delete things -->
                     <br><br>
                 
@@ -181,7 +181,7 @@
                   </form>
             </div>
             <div class="modal-footer">
-              <button name="deleteaPortfolioButton" type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button name="closebutton" type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button id="deleteaPortfolio"  type="button" class="btn btn-primary">Delete Project</button>
             </div>
           </div>

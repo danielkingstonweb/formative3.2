@@ -60,7 +60,7 @@ function cardLoad(url) {
 
 
 //add a product
-$('#addProject').click(function(){
+$('#addaPortfolio').click(function(){
   event.preventDefault();
   let name = $('#portfolioName').val();
   let author = $('#portfolioAuthor').val();  
@@ -103,7 +103,7 @@ function projectOfTheDay(){
 $('#deleteaPortfolio').click(function(){
   //above is the id tag for the delete button
   event.preventDefault();
-  let portfoliosId = $('#deleteProject').val();
+  let portfoliosId = $('#deletePortfolioInput').val();
   //above is the id for the input that a user types the IDs to be deleted into
   console.log(portfoliosId);
   if (portfoliosId == ''){
@@ -125,7 +125,7 @@ $('#deleteaPortfolio').click(function(){
  // <--! function for deleting portfolios ends here  !-->
  
 // <--! function for updating portfolios starts here  !-->
-$('#editProject').click(function(){
+$('#editPortfolio').click(function(){
   //above is the id tag for the button that runs this function
  event.preventDefault();
  let portfoliosId = $('#updPortfoliosid').val();
