@@ -59,6 +59,9 @@ function cardLoad(url) {
   })
   }
 
+  function projectOfTheDay(){
+      
+  }
 
 // <--! function for deleting portfolios starts here  !-->
 $('#deleteaPortfolio').click(function(){
