@@ -80,34 +80,10 @@ $(document).ready(function(){
 
                   <textarea class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description"></textarea>
                   <br><br>
-              
-        
+               
     
               
-                  <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-                  <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-                    <!-- this is the correct ID for user_url input for addPortfolios -->
-                  <br><br>
-                  </div>      
-                    <!-- this button has the correct ID for running the addPortfolios function-->
 
-                  <div class="modal-body__left">
-                        <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                        <br><br>
-                        <div class="img-preview" id="imgPreview">
-                          <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                        </div>
-                        <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                        <br><br>
-                  </div>
-                  <div class="modal-body__right">
-                    <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-                    <br><br>
-                    <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-                    <br><br>  
-                    <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">            
-                    <br><br>
-                  </div>   
 
                 </form>
                 `
