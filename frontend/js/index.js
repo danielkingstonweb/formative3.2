@@ -1,5 +1,8 @@
 console.log('i am linked');
 
+let portfolioData = [];
+console.log(portfolioData);
+
 $(document).ready(function(){
     let url;
 
@@ -18,6 +21,185 @@ $(document).ready(function(){
         }
     })
 
+    // MODAL FUNCTION BEGINS
+
+    function modalAddProject(){
+      // Card modal section Begins
+
+      $(".card-click").click(function(){
+        console.log('heyBro');
+        // let x = 0;
+        // for(let x = 0; x < portfolioData.length; x++){
+        //   if(parseInt(this.id) === portfolioData.length[x].id){
+        //     console.log(portfolioData.length[x].id);
+        //   }
+        // }
+      })
+
+      $("#addPortfolioBtn").click(function(){
+          console.log('heyModal');
+               $("#modalHeader").empty().append(
+                 `
+                 <h5 class="modal-title" id="exampleModalLabel">Add a Project</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 `
+               )
+
+               $("#modalBody").empty().append(
+                `
+                <form class="modal-body__add">
+
+                <div class="modal-body__left">
+                <!-- <label for='portfolioName'> Enter name: </label> -->
+                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+                <!-- this is the correct ID for name input for addPortfolios -->
+                <br><br>
+
+                <div class="img-preview" id="imgPreview">
+                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+                </div>
+
+                <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
+                  <!-- this is the correct ID for image_url input for addPortfolios -->
+                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+                <br><br>
+
+                
+              </div>
+                
+              <div class="modal-body__right">
+
+
+                            
+            
+            <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
+            <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+              <!-- this is the correct ID for author input for addPortfolios -->
+            <br><br>
+
+            <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
+              <!-- this is the correct ID for desc input for addPortfolios -->
+            <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
+            <br><br>
+            
+        
+    
+        
+            <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
+            <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+              <!-- this is the correct ID for user_url input for addPortfolios -->
+            <br><br>
+            </div>      
+              <!-- this button has the correct ID for running the addPortfolios function-->
+          </form>
+                `
+              )
+
+              $("#modalBody").empty().append(
+                `
+                
+                `
+              )
+          })
+
+          $("#deletePortfolioBtn").click(function(){
+            console.log('heyModal');
+                 $("#modalHeader").empty().append(
+                   `
+                   <h5 class="modal-title" id="exampleModalLabel">Delete a Project</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   `
+                 )
+  
+                 $("#modalBody").empty().append(
+                  `
+                  <form id="deletePortfolioForm">
+                  <h1> Delete a Portfolio</h1>   <br><br>
+                  <label for="deletePortfolio"> Delete a Portfolio by ID</label>
+                  <input type="text" id="deletePortfolioInput" name="delete-port" >      
+                  <!-- this is the id needed for the input to delete things -->
+                  <br><br>
+              
+                  <!-- this is the button with the id tag to run the delete function -->
+            
+                </form>
+                  `
+                )
+
+                $("#modalFooter").empty().append(
+                  `
+                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete portfolio</button>
+                  `
+                )
+            })
+
+            $("#editPortfolioBtn").click(function(){
+              console.log('heyModal');
+                   $("#modalHeader").empty().append(
+                     `
+                     <h5 class="modal-title" id="exampleModalLabel">Edit a Project</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     `
+                   )
+    
+                   $("#modalBody").empty().append(
+                    `
+                    <form class="modal-body__add">
+    
+                <div class="modal-body__left">
+                <!-- <label for='portfolioName'> Enter name: </label> -->
+                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+                <!-- this is the correct ID for name input for addPortfolios -->
+                <br><br>
+    
+                <div class="img-preview" id="imgPreview">
+                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+                </div>
+    
+                 <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
+                   <!-- this is the correct ID for image_url input for addPortfolios -->
+                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+                <br><br>
+    
+                
+              </div>
+                
+              <div class="modal-body__right">
+    
+    
+                                
+                
+                <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
+                <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+                  <!-- this is the correct ID for author input for addPortfolios -->
+                <br><br>
+    
+                <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
+                  <!-- this is the correct ID for desc input for addPortfolios -->
+                <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
+                <br><br>
+                
+            
+        
+            
+                <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
+                <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+                  <!-- this is the correct ID for user_url input for addPortfolios -->
+                <br><br>
+                </div>      
+                  <!-- this button has the correct ID for running the addPortfolios function-->
+              </form>
+                    `
+                  )
+              })
+  
+
+      };
+  
+    // MODAL FUNCTION ENDS
+
+    modalAddProject();
+
 
 
 
@@ -28,7 +210,10 @@ function cardLoad(url) {
       type: 'GET',
       dataType: 'JSON',
       success: function(portfoliosfromMongo){
-        var i;
+        console.log(portfoliosfromMongo);
+
+        portfolioData.push(portfoliosfromMongo);
+        let i;
   
         //below ID tag 'card_Result' is to match the container where the cards appear
         document.getElementById('cardResult').innerHTML = "";
@@ -36,16 +221,18 @@ function cardLoad(url) {
         for(i=0;i<portfoliosfromMongo.length;i++){
           document.getElementById('cardResult').innerHTML +=
           `
-          <div class="card">
-          <div class="card__img">
-            <img class="card-img" src="${portfoliosfromMongo[i].image_url}" class="card-img-top" alt="...">
-           </div> 
-            <div class="card-body">
-            <h5 class="card-title">${portfoliosfromMongo[i].name}</h5>
-            <p class="card-text">| ${portfoliosfromMongo[i].author}</p>
-            <a href="${portfoliosfromMongo[i].user_url}" target=”_blank” class="btn btn-primary btn-card">Visit the website</a>
-            </div>
-        </div>
+          <button class="card-click" id="${portfoliosfromMongo[i]._id}" data-toggle="modal" data-target="#exampleModal">
+          <div class="card" >
+            <div class="card__img">
+              <img class="card-img" src="${portfoliosfromMongo[i].image_url}" class="card-img-top" alt="...">
+            </div> 
+              <div class="card-body">
+              <h5 class="card-title">${portfoliosfromMongo[i].name}</h5>
+              <p class="card-text">| ${portfoliosfromMongo[i].author}</p>
+              <a href="${portfoliosfromMongo[i].user_url}" target=”_blank” class="btn btn-primary btn-card">Visit the website</a>
+              </div>
+          </div>
+          </button>
           `
   
       }
