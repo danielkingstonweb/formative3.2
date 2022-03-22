@@ -21,180 +21,180 @@ $(document).ready(function(){
         }
     })
 
-    // MODAL FUNCTION BEGINS
+    // // MODAL FUNCTION BEGINS
 
-    function modalAddProject(){
-      // Card modal section Begins
+    // function modalAddProject(){
+    //   // Card modal section Begins
 
-      $(".card-click").click(function(){
-        console.log('heyBro');
-        // let x = 0;
-        // for(let x = 0; x < portfolioData.length; x++){
-        //   if(parseInt(this.id) === portfolioData.length[x].id){
-        //     console.log(portfolioData.length[x].id);
-        //   }
-        // }
-      })
+    //   $(".card-click").click(function(){
+    //     console.log('heyBro');
+    //     // let x = 0;
+    //     // for(let x = 0; x < portfolioData.length; x++){
+    //     //   if(parseInt(this.id) === portfolioData.length[x].id){
+    //     //     console.log(portfolioData.length[x].id);
+    //     //   }
+    //     // }
+    //   })
 
-      $("#addPortfolioBtn").click(function(){
-          console.log('heyModal');
-               $("#modalHeader").empty().append(
-                 `
-                 <h5 class="modal-title" id="exampleModalLabel">Add a Project</h5>
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                 `
-               )
+    //   $("#addPortfolioBtn").click(function(){
+    //       console.log('heyModal');
+    //            $("#modalHeader").empty().append(
+    //              `
+    //              <h5 class="modal-title" id="exampleModalLabel">Add a Project</h5>
+    //              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    //              `
+    //            )
 
-               $("#modalBody").empty().append(
-                `
-                <form class="modal-body__add">
+    //            $("#modalBody").empty().append(
+    //             `
+    //             <form class="modal-body__add">
 
-                <div class="modal-body__left">
-                <!-- <label for='portfolioName'> Enter name: </label> -->
-                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                <!-- this is the correct ID for name input for addPortfolios -->
-                <br><br>
+    //             <div class="modal-body__left">
+    //             <!-- <label for='portfolioName'> Enter name: </label> -->
+    //             <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+    //             <!-- this is the correct ID for name input for addPortfolios -->
+    //             <br><br>
 
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
+    //             <div class="img-preview" id="imgPreview">
+    //               <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+    //             </div>
 
-                <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                  <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
+    //             <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
+    //               <!-- this is the correct ID for image_url input for addPortfolios -->
+    //             <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+    //             <br><br>
 
                 
-              </div>
+    //           </div>
                 
-              <div class="modal-body__right">
+    //           <div class="modal-body__right">
 
 
                             
             
-            <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-            <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-              <!-- this is the correct ID for author input for addPortfolios -->
-            <br><br>
+    //         <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
+    //         <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+    //           <!-- this is the correct ID for author input for addPortfolios -->
+    //         <br><br>
 
-            <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-              <!-- this is the correct ID for desc input for addPortfolios -->
-            <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-            <br><br>
+    //         <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
+    //           <!-- this is the correct ID for desc input for addPortfolios -->
+    //         <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
+    //         <br><br>
             
         
     
         
-            <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-            <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-              <!-- this is the correct ID for user_url input for addPortfolios -->
-            <br><br>
-            </div>      
-              <!-- this button has the correct ID for running the addPortfolios function-->
-          </form>
-                `
-              )
+    //         <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
+    //         <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+    //           <!-- this is the correct ID for user_url input for addPortfolios -->
+    //         <br><br>
+    //         </div>      
+    //           <!-- this button has the correct ID for running the addPortfolios function-->
+    //       </form>
+    //             `
+    //           )
 
-              $("#modalBody").empty().append(
-                `
+    //           $("#modalBody").empty().append(
+    //             `
                 
-                `
-              )
-          })
+    //             `
+    //           )
+    //       })
 
-          $("#deletePortfolioBtn").click(function(){
-            console.log('heyModal');
-                 $("#modalHeader").empty().append(
-                   `
-                   <h5 class="modal-title" id="exampleModalLabel">Delete a Project</h5>
-                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   `
-                 )
+    //       $("#deletePortfolioBtn").click(function(){
+    //         console.log('heyModal');
+    //              $("#modalHeader").empty().append(
+    //                `
+    //                <h5 class="modal-title" id="exampleModalLabel">Delete a Project</h5>
+    //                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    //                `
+    //              )
   
-                 $("#modalBody").empty().append(
-                  `
-                  <form id="deletePortfolioForm">
-                  <h1> Delete a Portfolio</h1>   <br><br>
-                  <label for="deletePortfolio"> Delete a Portfolio by ID</label>
-                  <input type="text" id="deletePortfolioInput" name="delete-port" >      
-                  <!-- this is the id needed for the input to delete things -->
-                  <br><br>
+    //              $("#modalBody").empty().append(
+    //               `
+    //               <form id="deletePortfolioForm">
+    //               <h1> Delete a Portfolio</h1>   <br><br>
+    //               <label for="deletePortfolioInput"> Delete a Portfolio by ID</label>
+    //               <input type="text" id="deletePortfolioinput" name="delete-port" >      
+    //               <!-- this is the id needed for the input to delete things -->
+    //               <br><br>
               
-                  <!-- this is the button with the id tag to run the delete function -->
+    //               <!-- this is the button with the id tag to run the delete function -->
             
-                </form>
-                  `
-                )
+    //             </form>
+    //               `
+    //             )
 
-                $("#modalFooter").empty().append(
-                  `
-                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete portfolio</button>
-                  `
-                )
-            })
+    //             $("#modalFooter").empty().append(
+    //               `
+    //               <button id="deleteaPortfolio" type="submit">Delete portfolio</button>
+    //               `
+    //             )
+    //         })
 
-            $("#editPortfolioBtn").click(function(){
-              console.log('heyModal');
-                   $("#modalHeader").empty().append(
-                     `
-                     <h5 class="modal-title" id="exampleModalLabel">Edit a Project</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                     `
-                   )
+    //         $("#editPortfolioBtn").click(function(){
+    //           console.log('heyModal');
+    //                $("#modalHeader").empty().append(
+    //                  `
+    //                  <h5 class="modal-title" id="exampleModalLabel">Edit a Project</h5>
+    //                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    //                  `
+    //                )
     
-                   $("#modalBody").empty().append(
-                    `
-                    <form class="modal-body__add">
+    //                $("#modalBody").empty().append(
+    //                 `
+    //                 <form class="modal-body__add">
     
-                <div class="modal-body__left">
-                <!-- <label for='portfolioName'> Enter name: </label> -->
-                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                <!-- this is the correct ID for name input for addPortfolios -->
-                <br><br>
+    //             <div class="modal-body__left">
+    //             <!-- <label for='portfolioName'> Enter name: </label> -->
+    //             <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+    //             <!-- this is the correct ID for name input for addPortfolios -->
+    //             <br><br>
     
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
+    //             <div class="img-preview" id="imgPreview">
+    //               <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+    //             </div>
     
-                 <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                   <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
+    //              <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
+    //                <!-- this is the correct ID for image_url input for addPortfolios -->
+    //             <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+    //             <br><br>
     
                 
-              </div>
+    //           </div>
                 
-              <div class="modal-body__right">
+    //           <div class="modal-body__right">
     
     
                                 
                 
-                <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-                <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-                  <!-- this is the correct ID for author input for addPortfolios -->
-                <br><br>
+    //             <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
+    //             <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+    //               <!-- this is the correct ID for author input for addPortfolios -->
+    //             <br><br>
     
-                <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-                  <!-- this is the correct ID for desc input for addPortfolios -->
-                <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-                <br><br>
+    //             <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
+    //               <!-- this is the correct ID for desc input for addPortfolios -->
+    //             <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
+    //             <br><br>
                 
             
         
             
-                <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-                <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-                  <!-- this is the correct ID for user_url input for addPortfolios -->
-                <br><br>
-                </div>      
-                  <!-- this button has the correct ID for running the addPortfolios function-->
-              </form>
-                    `
-                  )
-              })
+    //             <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
+    //             <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+    //               <!-- this is the correct ID for user_url input for addPortfolios -->
+    //             <br><br>
+    //             </div>      
+    //               <!-- this button has the correct ID for running the addPortfolios function-->
+    //           </form>
+    //                 `
+    //               )
+    //           })
   
 
-      };
+    //   };
   
     // MODAL FUNCTION ENDS
 
@@ -288,9 +288,10 @@ function projectOfTheDay(){
 
 // <--! function for deleting portfolios starts here  !-->
 $('#deleteaPortfolio').click(function(){
+  console.log("hi");
   //above is the id tag for the delete button
   event.preventDefault();
-  let portfoliosId = $('#deletePortfolioInput').val();
+  let portfoliosId = $('#deletePortfolioinput').val();
   //above is the id for the input that a user types the IDs to be deleted into
   console.log(portfoliosId);
   if (portfoliosId == ''){

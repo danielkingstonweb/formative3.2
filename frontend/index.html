@@ -55,12 +55,12 @@
     <!-- start of post form and details -->
     <section class="form">
         <div class="form-buttons">
-            <button type="button" class="add-project form-buttons__btn" id="addPortfolioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Project<i class="fa-solid fa-plus"></i></button>
+            <button type="button" class="add-project form-buttons__btn" id="addPortfolioBtn" data-bs-toggle="modal" data-bs-target="#addPortfolioModal">Add Project<i class="fa-solid fa-plus"></i></button>
 
-            <button type="button" class="delete-project form-buttons__btn" id="deletePortfolioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Project<i class="fa-solid fa-xmark"></i></button>
+            <button type="button" class="delete-project form-buttons__btn" id="deletePortfolioBtn" data-bs-toggle="modal" data-bs-target="#deletePortfolioModal">Delete Project<i class="fa-solid fa-xmark"></i></button>
             
 
-            <button type="button" class="edit-project form-buttons__btn" id="editPortfolioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
+            <button type="button" class="edit-project form-buttons__btn" id="editPortfolioBtn" data-bs-toggle="modal" data-bs-target="#editPortfolioModal">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
         </div>
         <div class="form-text">
             <h1 class="form-text__h1">Showcase your work</h1>
@@ -110,27 +110,24 @@
         </div>
     </div>
 
-    <!-- MODAL BEGINS -->
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header" id="modalHeader">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="modalBody">
-              ...
-            </div>
-            <div class="modal-footer" id="modalFooter">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+    <div class="modal fade" id="deletePortfolioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="deletePortfolioinput"> Delete a Portfolio by ID</label>
+            <input type="text" id="deletePortfolioinput" name="delete-port" >  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="deleteaPortfolio" class="btn btn-primary">Delete</button>
           </div>
         </div>
       </div>
-    <!-- MODAL ENDS -->
-
+    </div>
 
 
 
@@ -147,7 +144,7 @@
         
                 <label for='updPortfoliosid'> Insert ID: </label>
                 <input type="text" id='updPortfoliosid'>
-                  <!-- this is the correct ID for awhere the ID to be updated is put -->
+                  this is the correct ID for awhere the ID to be updated is put -->
                 <br><br>
         
                 <label for='updPorfoliosname'> Update name: </label>
@@ -175,7 +172,7 @@
                 <input type="text" id='updPortfoliosdesc'>
                    <!-- this is the correct ID for desc input update -->
                 <br><br>
-                <button id="updateaPortfolio" name="deleteaPortfolioButton" type="submit">Update portfolio</button> 
+                <button id="updateaPortfolio"  type="submit">Update portfolio</button> 
                       <!-- this is the button with the id tag to run the update function -->
             </form>
             </div>
@@ -185,7 +182,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     <footer class="footer"></footer>
      <script src="node_modules/jquery/dist/jquery.min.js"></script>
