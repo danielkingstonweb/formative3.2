@@ -97,8 +97,8 @@ $(document).ready(function(){
 
               $("#modalFooter").empty().append(
                 `
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button id="addProject" type="submit" class="btn btn-primary">Save changes</button>
+                    
+        <button id="addaPortfolio" type="submit" >Add Portfolio</button>
                 `
               )
 
@@ -163,7 +163,7 @@ $('#addaPortfolio').click(function(){
 
                 $("#modalFooter").empty().append(
                   `
-                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete portfolio</button>
+                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete Portfolio</button>
                   `
                 )
 
@@ -239,6 +239,12 @@ $('#addaPortfolio').click(function(){
                     <button id="updateaPortfolio" name="deleteaPortfolioButton" type="submit">Update portfolio</button> 
                           <!-- this is the button with the id tag to run the update function -->
                 </form>
+                    `
+                  )
+                  $("#modalFooter").empty().append(
+                    `
+                        
+            <button id="editPortfolio" type="submit" >Edit Portfolio</button>
                     `
                   )
 
