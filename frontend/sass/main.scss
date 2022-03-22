@@ -272,12 +272,12 @@ body {
     object-position: center;
   }
 
-  &__img:hover{
-    min-width: 100%;
-    max-width: 100%;
-    transition: 1s;
-    transition-timing-function: ease-in-out
-  } 
+  // &__img:hover{
+  //   min-width: 100%;
+  //   max-width: 100%;
+  //   transition: 1s;
+  //   transition-timing-function: ease-in-out
+  // } 
   
   &:hover > .card-body{
     display: none;
@@ -292,6 +292,9 @@ body {
   }
 
   &:hover{
+    min-height: 16em;
+    max-height: 16em;
+    transition: 1s;
     cursor: pointer;
   }
 
@@ -317,7 +320,99 @@ body {
 
   }
 }
+.modalHeader{
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+  padding: 1rem;
+  font-family: forma-djr-micro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
+.modal-body__add{
+  display: flex;
+  padding: 2rem;
+
+
+}
+
+.modal-field__add{
+  width: 100%;
+}
+
+.modal-field__add::placeholder{
+  font-family: sculpin, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.modal-field__add:focus{
+  font-family: sculpin, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+  .modal-body__left{
+    height: 100%;
+    width: 50%;
+    padding-right: 2rem;
+  }
+
+  .modal-body__right{
+    height: 100%;
+    width: 50%;
+    padding-left: 2rem;
+  }
+
+  .add-project__desc{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: vertical;
+    min-height: 40px;
+    line-height: 20px;
+    margin: none;
+  }
+
+.add-img__div{
+  display: flex;
+  width: 100%;
+
+}
+
+.add-project__img{
+  width: 92%;
+}
+
+.add-img__btn{
+  width: 7%;
+}
+
+.adda-portfolio{
+  padding: 0.5rem;
+  background: none;
+  border: 3px solid purple;
+}
+
+.img-preview{
+  height: 15rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(230, 230, 230);
+  margin-bottom: 1.5rem;
+  
+
+
+  &__txt{
+    width: 20ch;
+    font-family: sculpin, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
 
 .footer{
   height: 30vh;
@@ -365,10 +460,7 @@ body {
     height: 6rem;
     border-radius: 4rem;
   }
-  &-h1{
-    padding-top: none;
-    margin-top: none;
-  }
+
 }
 .about-us__header{
   height: 10vh;
