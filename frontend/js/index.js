@@ -236,8 +236,7 @@ $('#addaPortfolio').click(function(){
                     <input type="text" id='updPortfoliosdesc'>
                        <!-- this is the correct ID for desc input update -->
                     <br><br>
-                    <button id="updateaPortfolio" name="deleteaPortfolioButton" type="submit">Update portfolio</button> 
-                          <!-- this is the button with the id tag to run the update function -->
+
                 </form>
                     `
                   )
