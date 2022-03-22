@@ -49,56 +49,54 @@ $(document).ready(function(){
                 `
                 <form class="modal-body__add">
 
-                <div class="modal-body__left">
-                <!-- <label for='portfolioName'> Enter name: </label> -->
-                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                <!-- this is the correct ID for name input for addPortfolios -->
-                <br><br>
+                  <div class="modal-body__left">
+                    <!-- <label for='portfolioName'> Enter name: </label> -->
+                    <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+                    <!-- this is the correct ID for name input for addPortfolios -->
+                    <br><br>
 
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
+                    <div class="img-preview" id="imgPreview">
+                    <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+                    </div>
 
-                <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                  <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
+                    <div class"add-img__div">
 
+                      <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+                    
+                      <button target="#" class="add-img__btn" id="addImgToModal">+</button>
+
+                    </div>
                 
-              </div>
+                  </div>
                 
-              <div class="modal-body__right">
+                  <div class="modal-body__right">
+
+                  
+                  <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+                    <!-- this is the correct ID for author input for addPortfolios -->
+                  <br><br>
 
 
-                            
-            
-            <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-            <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-              <!-- this is the correct ID for author input for addPortfolios -->
-            <br><br>
-
-            <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-              <!-- this is the correct ID for desc input for addPortfolios -->
-            <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-            <br><br>
-            
+                  <textarea class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description"></textarea>
+                  <br><br>
+              
         
     
-        
-            <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-            <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-              <!-- this is the correct ID for user_url input for addPortfolios -->
-            <br><br>
-            </div>      
-              <!-- this button has the correct ID for running the addPortfolios function-->
-          </form>
+              
+                  <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
+                  <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+                    <!-- this is the correct ID for user_url input for addPortfolios -->
+                  <br><br>
+                  </div>      
+                    <!-- this button has the correct ID for running the addPortfolios function-->
+                </form>
                 `
               )
 
               $("#modalFooter").empty().append(
                 `
                     
-        <button id="addaPortfolio" type="submit" >Add Portfolio</button>
+                <button class="adda-portfolio" id="addaPortfolio" type="submit" >Add Project</button>
                 `
               )
 
