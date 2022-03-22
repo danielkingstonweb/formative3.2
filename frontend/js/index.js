@@ -2,10 +2,10 @@ console.log('i am linked');
 
 let portfolioData = [];
 console.log(portfolioData);
-
+// <--! Docuemnt Ready Starts here !-->
 $(document).ready(function(){
     let url;
-
+// <--! Ajax Function Sarts here !-->
     $.ajax({
         url: 'config.json', //acesses from end config.json
         type: 'GET',
@@ -20,7 +20,7 @@ $(document).ready(function(){
           console.log(error);
         }
     })
-
+// <--! Ajax Function end here !-->
     // MODAL FUNCTION BEGINS
 
     function modalAddProject(){
@@ -35,7 +35,7 @@ $(document).ready(function(){
         //   }
         // }
       })
-
+// <--! function for adding portfolios starts here  !-->
       $("#addPortfolioBtn").click(function(){
           console.log('heyModal');
                $("#modalHeader").empty().append(
@@ -48,6 +48,7 @@ $(document).ready(function(){
                $("#modalBody").empty().append(
                 `
                 <form class="modal-body__add">
+
 
                   <div class="modal-body__left">
                     <!-- <label for='portfolioName'> Enter name: </label> -->
@@ -89,6 +90,25 @@ $(document).ready(function(){
                   <br><br>
                   </div>      
                     <!-- this button has the correct ID for running the addPortfolios function-->
+
+                  <div class="modal-body__left">
+                        <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+                        <br><br>
+                        <div class="img-preview" id="imgPreview">
+                          <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+                        </div>
+                        <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+                        <br><br>
+                  </div>
+                  <div class="modal-body__right">
+                    <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+                    <br><br>
+                    <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
+                    <br><br>  
+                    <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">            
+                    <br><br>
+                  </div>   
+
                 </form>
                 `
               )
@@ -134,7 +154,7 @@ $('#addaPortfolio').click(function(){
   }//else
 });//addProject
           })
-
+// <--! function for deleting portfolios starts here  !-->
           $("#deletePortfolioBtn").click(function(){
             console.log('heyModal');
                  $("#modalHeader").empty().append(
@@ -149,8 +169,7 @@ $('#addaPortfolio').click(function(){
                   <form id="deletePortfolioForm">
                   <h1> Delete a Portfolio</h1>   <br><br>
                   <label for="deletePortfolio"> Delete a Portfolio by ID</label>
-                  <input type="text" id="deletePortfolioInput" name="delete-port" >      
-                  <!-- this is the id needed for the input to delete things -->
+                  <input type="text" id="deletePortfolioInput" name="delete-port" >     
                   <br><br>
               
                   <!-- this is the button with the id tag to run the delete function -->
@@ -205,37 +224,30 @@ $('#addaPortfolio').click(function(){
                     <h1> Update a Portfolio</h1>   <br><br>
             
                     <label for='updPortfoliosid'> Insert ID: </label>
-                    <input type="text" id='updPortfoliosid'>
-                      <!-- this is the correct ID for awhere the ID to be updated is put -->
+                    <input type="text" id='updPortfoliosid'>                
                     <br><br>
             
                     <label for='updPorfoliosname'> Update name: </label>
-                    <input type="text" id='updPorfoliosname'> 
-                    <!-- this is the correct ID for update name input -->
+                    <input type="text" id='updPorfoliosname'>   
                     <br><br>
                 
                     <label for='updPortfoliosauthor'> Update Author: </label>
-                    <input type="text" id='updPortfoliosauthor'>
-                      <!-- this is the correct ID for author update input -->
+                    <input type="text" id='updPortfoliosauthor'>                     
                     <br><br>
             
                 
                      <label  for='updImageurl'> Update the image url: </label>
-                    <input type="text"id='updImageurl' >
-                    <!-- this is the correct ID for image_url update input-->
+                    <input type="text"id='updImageurl' >                
                     <br><br>
             
                     <label for='updUserurl'> Update the user url: </label>
                     <input type="text" id='updUserurl'>
-                      <!-- this is the correct ID for user_url  update input -->
                     <br><br>
             
                     <label  for='updPortfoliosdesc'> Update Description: </label>       
                     <input type="text" id='updPortfoliosdesc'>
-                       <!-- this is the correct ID for desc input update -->
                     <br><br>
-                    <button id="updateaPortfolio" name="deleteaPortfolioButton" type="submit">Update portfolio</button> 
-                          <!-- this is the button with the id tag to run the update function -->
+
                 </form>
                     `
                   )
@@ -247,7 +259,7 @@ $('#addaPortfolio').click(function(){
                   )
 
 
-                  // <--! function for updating portfolios starts here  !-->
+// <--! function for updating portfolios starts here  !-->
 $('#editPortfolio').click(function(){
   //above is the id tag for the button that runs this function
  event.preventDefault();
