@@ -272,12 +272,12 @@ body {
     object-position: center;
   }
 
-  // &__img:hover{
-  //   min-width: 100%;
-  //   max-width: 100%;
-  //   transition: 1s;
-  //   transition-timing-function: ease-in-out
-  // } 
+  &__img:hover{
+    min-width: 100%;
+    max-width: 100%;
+    transition: 1s;
+    transition-timing-function: ease-in-out
+  } 
   
   &:hover > .card-body{
     display: none;
@@ -292,9 +292,6 @@ body {
   }
 
   &:hover{
-    min-height: 16em;
-    max-height: 16em;
-    transition: 1s;
     cursor: pointer;
   }
 
