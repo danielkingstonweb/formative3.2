@@ -333,12 +333,16 @@ body {
 .modal-body__add{
   display: flex;
   padding: 2rem;
-
+  border-radius: 30px;
+  border: none;
+  padding: 0.5em;
 
 }
 
 .modal-field__add{
   width: 100%;
+  border-radius: 35px;
+  border: none;
 }
 
 .modal-field__add::placeholder{
