@@ -55,12 +55,12 @@
     <!-- start of post form and details -->
     <section class="form">
         <div class="form-buttons">
-            <button type="button" class="add-project form-buttons__btn" id="addPortfolioBtn" data-bs-toggle="modal" data-bs-target="#addPortfolioModal">Add Project<i class="fa-solid fa-plus"></i></button>
+            <button type="button" class="add-project form-buttons__btn" id="addPortfolioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Project<i class="fa-solid fa-plus"></i></button>
 
-            <button type="button" class="delete-project form-buttons__btn" id="deletePortfolioBtn" data-bs-toggle="modal" data-bs-target="#deletePortfolioModal">Delete Project<i class="fa-solid fa-xmark"></i></button>
+            <button type="button" class="delete-project form-buttons__btn" id="deletePortfolioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Project<i class="fa-solid fa-xmark"></i></button>
             
 
-            <button type="button" class="edit-project form-buttons__btn" id="editPortfolioBtn" data-bs-toggle="modal" data-bs-target="#editPortfolioModal">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
+            <button type="button" class="edit-project form-buttons__btn" id="editPortfolioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Project<i class="fa-solid fa-pen-to-square"></i></i></button>
         </div>
         <div class="form-text">
             <h1 class="form-text__h1">Showcase your work</h1>
@@ -72,6 +72,8 @@
         </div>
     </section>
     <!-- end of post forms -->
+
+    
 
 
     <!-- start of card container -->
@@ -108,101 +110,26 @@
         </div>
     </div>
 
-    <div class="modal fade" id="addPortfolioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- MODAL BEGINS -->
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add a Project</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form class="modal-body__add">
-   
-                <div class="modal-body__left">
-                <!-- <label for='portfolioName'> Enter name: </label> -->
-                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                <!-- this is the correct ID for name input for addPortfolios -->
-                <br><br>
-
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
-
-                 <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                   <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
-
-                
-              </div>
-                
-              <div class="modal-body__right">
-
-
-                                
-                
-                <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-                <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-                  <!-- this is the correct ID for author input for addPortfolios -->
-                <br><br>
-
-                <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-                  <!-- this is the correct ID for desc input for addPortfolios -->
-                <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-                <br><br>
-                
-            
-        
-            
-                <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-                <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-                  <!-- this is the correct ID for user_url input for addPortfolios -->
-                <br><br>
-                </div>      
-                  <!-- this button has the correct ID for running the addPortfolios function-->
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" id="addaPortfolio">Add Project</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="modal fade" id="deletePortfolioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" id="modalHeader">
               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form id="deletePortfolioForm">
-                    <h1> Delete a Portfolio</h1>   <br><br>
-                    <label for="deletePortfolio"> Delete a Portfolio by ID</label>
-                    <input type="text" id="deletePortfolioInput" name="delete-port" >      
-                    <!-- this is the id needed for the input to delete things -->
-                    <br><br>
-                
-                    <!-- this is the button with the id tag to run the delete function -->
-              
-                  </form>
+            <div class="modal-body" id="modalBody">
+              ...
             </div>
-            <div class="modal-footer">
-
-              <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit" class="btn btn-primary">Delete Project</button>
-   
-
+            <div class="modal-footer" id="modalFooter">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
       </div>
+    <!-- MODAL ENDS -->
 
 
 
@@ -261,8 +188,11 @@
       </div>
 
     <footer class="footer"></footer>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <!-- <script src="./node_modules/"></script> -->
+    <!-- <script src="./node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
