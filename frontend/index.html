@@ -215,7 +215,42 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              ...
+              <form id="updPortfolioForm">
+                <h1> Update a Portfolio</h1>   <br><br>
+        
+                <label for='updPortfoliosid'> Insert ID: </label>
+                <input type="text" id='updPortfoliosid'>
+                  <!-- this is the correct ID for awhere the ID to be updated is put -->
+                <br><br>
+        
+                <label for='updPorfoliosname'> Update name: </label>
+                <input type="text" id='updPorfoliosname'> 
+                <!-- this is the correct ID for update name input -->
+                <br><br>
+            
+                <label for='updPortfoliosauthor'> Update Author: </label>
+                <input type="text" id='updPortfoliosauthor'>
+                  <!-- this is the correct ID for author update input -->
+                <br><br>
+        
+            
+                 <label  for='updImageurl'> Update the image url: </label>
+                <input type="text"id='updImageurl' >
+                <!-- this is the correct ID for image_url update input-->
+                <br><br>
+        
+                <label for='updUserurl'> Update the user url: </label>
+                <input type="text" id='updUserurl'>
+                  <!-- this is the correct ID for user_url  update input -->
+                <br><br>
+        
+                <label  for='updPortfoliosdesc'> Update Description: </label>       
+                <input type="text" id='updPortfoliosdesc'>
+                   <!-- this is the correct ID for desc input update -->
+                <br><br>
+                <button id="updateaPortfolio" name="deleteaPortfolioButton" type="submit">Update portfolio</button> 
+                      <!-- this is the button with the id tag to run the update function -->
+            </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
