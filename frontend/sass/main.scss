@@ -120,21 +120,19 @@ body {
   &-left{
     height: 100%;
     width: 50%;
-    background: orange;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &__img{
-      height: 90%;
-      width: 90%;
-      background: purple;
+      height: 100%;
+      width: 100%;
     }
   }
   &-right{
     height: 100%;
     width: 50%;
-    background: burlywood;
+    background: #f4f4f4;
   }
 
 }
@@ -300,6 +298,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     font-family: sculpin, sans-serif;
+    text-align: left;
     font-weight: 400;
     font-style: normal;
     margin: 2rem 0rem 2rem 0rem;

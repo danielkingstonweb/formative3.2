@@ -1,7 +1,7 @@
 console.log('i am linked');
 
-let portfolioData = [];
-console.log(portfolioData);
+// let portfolioData = [];
+// console.log(portfolioData);
 
 $(document).ready(function(){
     let url;
@@ -21,20 +21,14 @@ $(document).ready(function(){
         }
     })
 
+    
+
+
     // MODAL FUNCTION BEGINS
 
     function modalAddProject(){
       // Card modal section Begins
 
-      $(".card-click").click(function(){
-        console.log('heyBro');
-        // let x = 0;
-        // for(let x = 0; x < portfolioData.length; x++){
-        //   if(parseInt(this.id) === portfolioData.length[x].id){
-        //     console.log(portfolioData.length[x].id);
-        //   }
-        // }
-      })
 
       $("#addPortfolioBtn").click(function(){
           console.log('heyModal');
@@ -63,77 +57,72 @@ $(document).ready(function(){
                   <!-- this is the correct ID for image_url input for addPortfolios -->
                 <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
                 <br><br>
-
-                
               </div>
                 
               <div class="modal-body__right">
+                    <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
+                    <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+                      <!-- this is the correct ID for author input for addPortfolios -->
+                    <br><br>
 
-
-                            
-            
-            <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-            <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-              <!-- this is the correct ID for author input for addPortfolios -->
-            <br><br>
-
-            <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-              <!-- this is the correct ID for desc input for addPortfolios -->
-            <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-            <br><br>
+                  <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
+                    <!-- this is the correct ID for desc input for addPortfolios -->
+                  <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
+                  <br><br>
             
         
     
         
-            <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-            <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-              <!-- this is the correct ID for user_url input for addPortfolios -->
-            <br><br>
-            </div>      
-              <!-- this button has the correct ID for running the addPortfolios function-->
-          </form>
+                  <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
+                  <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+                    <!-- this is the correct ID for user_url input for addPortfolios -->
+                  <br><br>
+                  </div>      
+                    <!-- this button has the correct ID for running the addPortfolios function-->
+                </form>
                 `
               )
 
-              $("#modalBody").empty().append(
+              $("#modalFooter").empty().append(
                 `
+                <button id="addaPortfolio" type="submit" >Add portfolio</button>
                 
                 `
               )
 
               //add a product
-$('#addaPortfolio').click(function(){
-  event.preventDefault();
-  let name = $('#portfolioName').val();
-  let author = $('#portfolioAuthor').val();  
-  let image_url = $('#portfolioImageurl').val();
-  let user_url = $('#portfolioUAerurl').val();
-  let desc = $('#portfolioDesc').val();  
+            $('#addaPortfolio').click(function(){
+              event.preventDefault();
+              let name = $('#portfolioName').val();
+              let author = $('#portfolioAuthor').val();  
+              let image_url = $('#portfolioImageurl').val();
+              let user_url = $('#portfolioUAerurl').val();
+              let desc = $('#portfolioDesc').val();  
 
-  console.log(name,author, image_url, user_url, desc);
-  if (name == '' || author == '' || image_url == '' || user_url == ''|| desc == ''){
-    alert('Please enter all details');
-  } else {
-    $.ajax({
-      url : `http://${url}/addPortfolios`,
-      type : 'POST',
-      data :{
-        name: name,
-        author: author,
-        image_url:image_url,
-        user_url: user_url,
-        desc: desc
-      },
-      success : function(portfolios){
-        console.log(portfolios);
-        alert ('Project added');
-      },
-      error : function(){
-        console.log('error: cannot call api');
-      }//error
-    })//ajax
-  }//else
-});//addProject
+              console.log(name,author, image_url, user_url, desc);
+              if (name == '' || author == '' || image_url == '' || user_url == ''|| desc == ''){
+                alert('Please enter all details');
+              } else {
+                $.ajax({
+                  url : `http://${url}/addPortfolios`,
+                  type : 'POST',
+                  data :{
+                    name: name,
+                    author: author,
+                    image_url:image_url,
+                    user_url: user_url,
+                    desc: desc
+                  },
+                  success : function(portfolios){
+                    console.log(portfolios);
+                    alert ('Project added');
+                  },
+                  error : function(){
+                    console.log('error: cannot call api');
+                  }//error
+                })//ajax
+              }//else
+            });//addProject
           })
 
           $("#deletePortfolioBtn").click(function(){
@@ -249,51 +238,57 @@ $('#addaPortfolio').click(function(){
               </form>
                     `
                   )
+                  $("#modalFooter").empty().append(
+                    `
+                        
+            <button id="editPortfolio" type="submit" >Edit Portfolio</button>
+                    `
+                  )
 
 
                   // <--! function for updating portfolios starts here  !-->
-$('#editPortfolio').click(function(){
-  //above is the id tag for the button that runs this function
- event.preventDefault();
- let portfoliosId = $('#updPortfoliosid').val();
- let portfoliosName = $('#updPortfoliosname').val();
- let portfoliosAuthor = $('#updPortfoliosauthor').val();
- let imageurl = $('#updImageurl').val();
- let userurl = $('#updUserurl').val();
- let portfoliosDesc = $('#updPortfoliosdesc').val();
- //above are the id tags used for input fields in the update portfolios form
- console.log(portfoliosId, portfoliosName, portfoliosAuthor, imageurl, userurl, portfoliosDesc);
- //logs content of the inputs
- if ( portfoliosId == ''){
-   alert('Please enter portfolio ID for updating');
-   //error fnctino if no id inputted
- } else {
-   //below is ajax function for sending update PATCH to the database
-   $.ajax({
-     url: `http://${url}/updatePortfolios/${portfoliosId}`,
-     type: 'PATCH',
-     data:{
-       name : portfoliosName,
-       author: portfoliosAuthor,
-       image_url: imageurl,
-       user_url: userurl,
-       desc: portfoliosDesc
-       //above is the model variables getting data from the input dields with these tags
-     },
-     success: function(data){
-       console.log(data);
-       alert('File upated sucessfully');
-     }, //success
-     error: function(){
-       console.log('error: cannot update portfolio');
-     } //error
-   })//ajax
- }//if
-})//end
+                  $('#editPortfolio').click(function(){
+                    //above is the id tag for the button that runs this function
+                  event.preventDefault();
+                  let portfoliosId = $('#updPortfoliosid').val();
+                  let portfoliosName = $('#updPortfoliosname').val();
+                  let portfoliosAuthor = $('#updPortfoliosauthor').val();
+                  let imageurl = $('#updImageurl').val();
+                  let userurl = $('#updUserurl').val();
+                  let portfoliosDesc = $('#updPortfoliosdesc').val();
+                  //above are the id tags used for input fields in the update portfolios form
+                  console.log(portfoliosId, portfoliosName, portfoliosAuthor, imageurl, userurl, portfoliosDesc);
+                  //logs content of the inputs
+                  if ( portfoliosId == ''){
+                    alert('Please enter portfolio ID for updating');
+                    //error fnctino if no id inputted
+                  } else {
+                    //below is ajax function for sending update PATCH to the database
+                    $.ajax({
+                      url: `http://${url}/updatePortfolios/${portfoliosId}`,
+                      type: 'PATCH',
+                      data:{
+                        name : portfoliosName,
+                        author: portfoliosAuthor,
+                        image_url: imageurl,
+                        user_url: userurl,
+                        desc: portfoliosDesc
+                        //above is the model variables getting data from the input dields with these tags
+                      },
+                      success: function(data){
+                        console.log(data);
+                        alert('File upated sucessfully');
+                      }, //success
+                      error: function(){
+                        console.log('error: cannot update portfolio');
+                      } //error
+                    })//ajax
+                  }//if
+                  })//end
               })
   
 
-
+              // cardLoad(url);
       };
   
     // MODAL FUNCTION ENDS
@@ -312,7 +307,20 @@ function cardLoad(url) {
       success: function(portfoliosfromMongo){
         console.log(portfoliosfromMongo);
 
-        portfolioData.push(portfoliosfromMongo);
+        // portfolioData.push(portfoliosfromMongo);
+        window.portfolioData = portfoliosfromMongo;
+        console.log(portfolioData);
+
+
+        // Project of the day function begins
+        let randomProjectCalc = Math.floor(Math.random() * 26);
+        let randomPost = portfolioData[randomProjectCalc];
+        console.log(randomPost);
+        // Project of the day function ends
+
+        $(".potd-left__img").css("background", `url(${randomPost.image_url})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center")
+
+
         let i;
   
         //below ID tag 'card_Result' is to match the container where the cards appear
@@ -321,8 +329,8 @@ function cardLoad(url) {
         for(i=0;i<portfoliosfromMongo.length;i++){
           document.getElementById('cardResult').innerHTML +=
           `
-          <button class="card-click" id="${portfoliosfromMongo[i]._id}" data-toggle="modal" data-target="#exampleModal">
-          <div class="card" >
+          <button class="card-click" id="${portfoliosfromMongo[i]._id}" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <div class="card">
             <div class="card__img">
               <img class="card-img" src="${portfoliosfromMongo[i].image_url}" class="card-img-top" alt="...">
             </div> 
@@ -334,6 +342,11 @@ function cardLoad(url) {
           </div>
           </button>
           `
+
+          
+      $(".card-click").click(function(){
+        console.log("heyBro");
+      })
   
       }
       //above is the append for the cards. this is just a template to be used to create the cards, providing the designer with the right tags.
@@ -346,13 +359,14 @@ function cardLoad(url) {
   })
 
 
-
+  // modalAddProject();
 
   }
 
-function projectOfTheDay(){
-      
-}
+
+
+
+
 
 // <--! function for deleting portfolios starts here  !-->
 // $('#deleteaPortfolio').click(function(){
