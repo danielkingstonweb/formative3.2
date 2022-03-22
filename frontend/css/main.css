@@ -287,6 +287,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+.about-img {
+  height: 6rem;
+  border-radius: 4rem;
+}
+.about-h1 {
+  padding-top: none;
+  margin-top: none;
+}
 
 .about-us__header {
   height: 10vh;

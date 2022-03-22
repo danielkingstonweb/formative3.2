@@ -363,6 +363,15 @@ body {
   background: rgb(248, 248, 248);
   display: flex;
   flex-direction: column;
+
+  &-img{
+    height: 6rem;
+    border-radius: 4rem;
+  }
+  &-h1{
+    padding-top: none;
+    margin-top: none;
+  }
 }
 .about-us__header{
   height: 10vh;

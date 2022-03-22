@@ -95,9 +95,10 @@ $(document).ready(function(){
                 `
               )
 
-              $("#modalBody").empty().append(
+              $("#modalFooter").empty().append(
                 `
-                
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="addProject" type="submit" class="btn btn-primary">Save changes</button>
                 `
               )
           })
@@ -144,51 +145,42 @@ $(document).ready(function(){
     
                    $("#modalBody").empty().append(
                     `
-                    <form class="modal-body__add">
-    
-                <div class="modal-body__left">
-                <!-- <label for='portfolioName'> Enter name: </label> -->
-                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                <!-- this is the correct ID for name input for addPortfolios -->
-                <br><br>
-    
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
-    
-                 <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                   <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
-    
-                
-              </div>
-                
-              <div class="modal-body__right">
-    
-    
-                                
-                
-                <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-                <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-                  <!-- this is the correct ID for author input for addPortfolios -->
-                <br><br>
-    
-                <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-                  <!-- this is the correct ID for desc input for addPortfolios -->
-                <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-                <br><br>
-                
+                    <form id="updPortfolioForm">
+                    <h1> Update a Portfolio</h1>   <br><br>
             
-        
+                    <label for='updPortfoliosid'> Insert ID: </label>
+                    <input type="text" id='updPortfoliosid'>
+                      <!-- this is the correct ID for awhere the ID to be updated is put -->
+                    <br><br>
             
-                <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-                <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-                  <!-- this is the correct ID for user_url input for addPortfolios -->
-                <br><br>
-                </div>      
-                  <!-- this button has the correct ID for running the addPortfolios function-->
-              </form>
+                    <label for='updPorfoliosname'> Update name: </label>
+                    <input type="text" id='updPorfoliosname'> 
+                    <!-- this is the correct ID for update name input -->
+                    <br><br>
+                
+                    <label for='updPortfoliosauthor'> Update Author: </label>
+                    <input type="text" id='updPortfoliosauthor'>
+                      <!-- this is the correct ID for author update input -->
+                    <br><br>
+            
+                
+                     <label  for='updImageurl'> Update the image url: </label>
+                    <input type="text"id='updImageurl' >
+                    <!-- this is the correct ID for image_url update input-->
+                    <br><br>
+            
+                    <label for='updUserurl'> Update the user url: </label>
+                    <input type="text" id='updUserurl'>
+                      <!-- this is the correct ID for user_url  update input -->
+                    <br><br>
+            
+                    <label  for='updPortfoliosdesc'> Update Description: </label>       
+                    <input type="text" id='updPortfoliosdesc'>
+                       <!-- this is the correct ID for desc input update -->
+                    <br><br>
+                    <button id="updateaPortfolio" name="deleteaPortfolioButton" type="submit">Update portfolio</button> 
+                          <!-- this is the button with the id tag to run the update function -->
+                </form>
                     `
                   )
               })
