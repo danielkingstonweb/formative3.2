@@ -1,0 +1,89 @@
+.potd{
+    height: 70vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    padding: 4em;
+    overflow-x: hidden;
+  
+    &__left{
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2em 1em;
+  
+    }
+    &__right{
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      padding: 2em 5em;
+    }
+  
+    // &__header{
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+    //   align-content: center;
+    //   text-align: center;
+    //   gap: 0.5em;
+    // }
+    
+  
+    &__header-block{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      text-align: left;
+      gap: 0.5em;
+    }
+  
+    &-header{
+      margin: 0;
+      @include displayFont;
+      border-right: solid 5px;
+      padding-right: 0.5em;
+      border-color: $accent;
+      font-size: 3rem;
+    
+    }
+    &-subheader{
+      height: 100%;
+      margin: 0;
+      padding-left: 0.5em;
+      font-size: 1.5rem;
+    }
+  
+    &-author{
+      @include bodyFont;
+      font-weight: bold;
+      margin-top: 0.5em;
+    }
+  
+    &__body{
+      @include bodyFont;
+      font-size: 1.5rem;
+    }
+  
+    &-link{
+      @include bodyFont;
+      font-style: italic;
+      font-size: 1rem;
+      color: $dark;
+      text-decoration: none;
+    }
+  
+    &-link:hover{
+      position: relative;
+      bottom: 0.2em;
+      color: $accent;
+    }
+  
+  }
+  // end of post of the day
+  // -------------------------------
