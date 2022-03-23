@@ -420,6 +420,10 @@
   display: flex;
   flex-direction: column;
 }
+.about-img {
+  height: 6rem;
+  border-radius: 4rem;
+}
 
 .about-us__header {
   height: 10vh;

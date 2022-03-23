@@ -5,7 +5,7 @@ console.log('i am linked');
 
 $(document).ready(function(){
     let url;
-
+// <--! Ajax Function Sarts here !-->
     $.ajax({
         url: 'config.json', //acesses from end config.json
         type: 'GET',
@@ -29,7 +29,6 @@ $(document).ready(function(){
     function modalAddProject(){
       // Card modal section Begins
 
-
       $("#addPortfolioBtn").click(function(){
           console.log('heyModal');
                $("#modalHeader").empty().append(
@@ -43,12 +42,12 @@ $(document).ready(function(){
                 `
                 <form class="modal-body__add">
 
-                <div class="modal-body__left">
 
-
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
+                  <div class="modal-body__left">
+                    <!-- <label for='portfolioName'> Enter name: </label> -->
+                    <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
+                    <!-- this is the correct ID for name input for addPortfolios -->
+                    <br><br>
 
                 <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
                   <!-- this is the correct ID for image_url input for addPortfolios -->
@@ -80,6 +79,35 @@ $(document).ready(function(){
                   <br><br>
                   </div>      
                     <!-- this button has the correct ID for running the addPortfolios function-->
+                    <div class="img-preview" id="imgPreview">
+                    <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+                    </div>
+
+                    <div class"add-img__div">
+
+                      <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
+                    
+                      <button target="#" class="add-img__btn" id="addImgToModal">+</button>
+
+                    </div>
+                
+                  </div>
+                
+                  <div class="modal-body__right">
+
+                  
+                  <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
+                    <!-- this is the correct ID for author input for addPortfolios -->
+                  <br><br>
+
+
+                  <textarea class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description"></textarea>
+                  <br><br>
+               
+    
+              
+
+
                 </form>
                 `
               )
@@ -140,7 +168,7 @@ $(document).ready(function(){
 
             imagePreview();
           })
-
+// <--! function for deleting portfolios starts here  !-->
           $("#deletePortfolioBtn").click(function(){
             console.log('heyModal');
                  $("#modalHeader").empty().append(
@@ -155,8 +183,7 @@ $(document).ready(function(){
                   <form id="deletePortfolioForm">
                   <h1> Delete a Portfolio</h1>   <br><br>
                   <label for="deletePortfolio"> Delete a Portfolio by ID</label>
-                  <input type="text" id="deletePortfolioInput" name="delete-port" >      
-                  <!-- this is the id needed for the input to delete things -->
+                  <input type="text" id="deletePortfolioInput" name="delete-port" >     
                   <br><br>
               
                   <!-- this is the button with the id tag to run the delete function -->
@@ -167,7 +194,7 @@ $(document).ready(function(){
 
                 $("#modalFooter").empty().append(
                   `
-                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete portfolio</button>
+                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete Portfolio</button>
                   `
                 )
 
@@ -207,51 +234,41 @@ $(document).ready(function(){
     
                    $("#modalBody").empty().append(
                     `
-                    <form class="modal-body__add">
-    
-                <div class="modal-body__left">
-                <!-- <label for='portfolioName'> Enter name: </label> -->
-                <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-                <!-- this is the correct ID for name input for addPortfolios -->
-                <br><br>
-    
-                <div class="img-preview" id="imgPreview">
-                  <p class="img-preview__txt">When you add your image a preview will show up here.</p>
-                </div>
-    
-                 <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                   <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text"id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
-    
-                
-              </div>
-                
-              <div class="modal-body__right">
-    
-    
-                                
-                
-                <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
-                <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-                  <!-- this is the correct ID for author input for addPortfolios -->
-                <br><br>
-    
-                <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-                  <!-- this is the correct ID for desc input for addPortfolios -->
-                <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
-                <br><br>
-                
+                    <form id="updPortfolioForm">
+                    <h1> Update a Portfolio</h1>   <br><br>
             
-        
+                    <label for='updPortfoliosid'> Insert ID: </label>
+                    <input type="text" id='updPortfoliosid'>                
+                    <br><br>
             
-                <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-                <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-                  <!-- this is the correct ID for user_url input for addPortfolios -->
-                <br><br>
-                </div>      
-                  <!-- this button has the correct ID for running the addPortfolios function-->
-              </form>
+                    <label for='updPorfoliosname'> Update name: </label>
+                    <input type="text" id='updPorfoliosname'>   
+                    <br><br>
+                
+                    <label for='updPortfoliosauthor'> Update Author: </label>
+                    <input type="text" id='updPortfoliosauthor'>                     
+                    <br><br>
+            
+                
+                     <label  for='updImageurl'> Update the image url: </label>
+                    <input type="text"id='updImageurl' >                
+                    <br><br>
+            
+                    <label for='updUserurl'> Update the user url: </label>
+                    <input type="text" id='updUserurl'>
+                    <br><br>
+            
+                    <label  for='updPortfoliosdesc'> Update Description: </label>       
+                    <input type="text" id='updPortfoliosdesc'>
+                    <br><br>
+
+                </form>
+                    `
+                  )
+                  $("#modalFooter").empty().append(
+                    `
+                        
+            <button id="editPortfolio" type="submit" >Edit Portfolio</button>
                     `
                   )
 
@@ -263,45 +280,45 @@ $(document).ready(function(){
                   )
 
 
-                  // <--! function for updating portfolios starts here  !-->
-                  $('#editPortfolio').click(function(){
-                    //above is the id tag for the button that runs this function
-                  event.preventDefault();
-                  let portfoliosId = $('#updPortfoliosid').val();
-                  let portfoliosName = $('#updPortfoliosname').val();
-                  let portfoliosAuthor = $('#updPortfoliosauthor').val();
-                  let imageurl = $('#updImageurl').val();
-                  let userurl = $('#updUserurl').val();
-                  let portfoliosDesc = $('#updPortfoliosdesc').val();
-                  //above are the id tags used for input fields in the update portfolios form
-                  console.log(portfoliosId, portfoliosName, portfoliosAuthor, imageurl, userurl, portfoliosDesc);
-                  //logs content of the inputs
-                  if ( portfoliosId == ''){
-                    alert('Please enter portfolio ID for updating');
-                    //error fnctino if no id inputted
-                  } else {
-                    //below is ajax function for sending update PATCH to the database
-                    $.ajax({
-                      url: `http://${url}/updatePortfolios/${portfoliosId}`,
-                      type: 'PATCH',
-                      data:{
-                        name : portfoliosName,
-                        author: portfoliosAuthor,
-                        image_url: imageurl,
-                        user_url: userurl,
-                        desc: portfoliosDesc
-                        //above is the model variables getting data from the input dields with these tags
-                      },
-                      success: function(data){
-                        console.log(data);
-                        alert('File upated sucessfully');
-                      }, //success
-                      error: function(){
-                        console.log('error: cannot update portfolio');
-                      } //error
-                    })//ajax
-                  }//if
-                  })//end
+// <--! function for updating portfolios starts here  !-->
+$('#editPortfolio').click(function(){
+  //above is the id tag for the button that runs this function
+ event.preventDefault();
+ let portfoliosId = $('#updPortfoliosid').val();
+ let portfoliosName = $('#updPortfoliosname').val();
+ let portfoliosAuthor = $('#updPortfoliosauthor').val();
+ let imageurl = $('#updImageurl').val();
+ let userurl = $('#updUserurl').val();
+ let portfoliosDesc = $('#updPortfoliosdesc').val();
+ //above are the id tags used for input fields in the update portfolios form
+ console.log(portfoliosId, portfoliosName, portfoliosAuthor, imageurl, userurl, portfoliosDesc);
+ //logs content of the inputs
+ if ( portfoliosId == ''){
+   alert('Please enter portfolio ID for updating');
+   //error fnctino if no id inputted
+ } else {
+   //below is ajax function for sending update PATCH to the database
+   $.ajax({
+     url: `http://${url}/updatePortfolios/${portfoliosId}`,
+     type: 'PATCH',
+     data:{
+       name : portfoliosName,
+       author: portfoliosAuthor,
+       image_url: imageurl,
+       user_url: userurl,
+       desc: portfoliosDesc
+       //above is the model variables getting data from the input dields with these tags
+     },
+     success: function(data){
+       console.log(data);
+       alert('File upated sucessfully');
+     }, //success
+     error: function(){
+       console.log('error: cannot update portfolio');
+     } //error
+   })//ajax
+ }//if
+})//end
               })
   
 
