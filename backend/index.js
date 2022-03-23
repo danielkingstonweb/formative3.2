@@ -63,7 +63,6 @@ app.get('/allProductsFromDB',(req,res)=>{
     })
   })
 
-// <--! test function code ends here -->
 // test function code ends here
 
 // Getting the id for the modals
