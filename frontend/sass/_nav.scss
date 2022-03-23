@@ -1,0 +1,76 @@
+// nav bar start
+.nav{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    text-align: center;
+    background: $light;
+    position: fixed;
+    z-index: 1000;
+  
+  
+    &-header{
+      height: 100%;
+      padding: 0em 2em;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: space-between;
+      text-align: center;
+      background: $accent;
+  
+      &__text {
+        @include displayFont;
+        font-size: 2.5rem;
+        margin: 0;
+      }
+    }
+  
+  
+  
+    &-navigation{
+      height: 10vh;
+      margin: 0em 2em 0em 2em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      justify-content: space-between;
+      text-align: center;
+  
+      &__ul{
+        list-style-type: none;
+        display: flex;
+        gap: 1.2em;
+        padding: 0;
+        margin: 0;
+      } // end of ul
+      &__li {
+        font-family: sculpin, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: capitalize;
+        cursor: pointer;
+      }  // end of li
+  
+      &__li:hover{
+        color: $accent;
+        position: relative;
+        bottom: 0.2em;
+        transition: 0.3s;
+      }
+  
+    } // end of navigation  
+  }
+  
+  .hamburger{
+    display: none;
+  }
+  
+  //end of nav
+  // -------------------------------
+  

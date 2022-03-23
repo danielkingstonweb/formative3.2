@@ -1,0 +1,29 @@
+.hero{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: url(../img/lightbulb-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  
+    &-img{
+      padding: 30vh 0vw 30vh 5vw;
+    }
+  
+    &-h1{
+      @include displayFont;
+      font-size: 10vw;
+    }
+    &-p{
+      border-left: solid 5px;
+      padding-left: 1em;
+      border-color: $accent;
+      @include bodyFont;
+      font-size: 2vw;
+      width: 35ch;
+    }
+  }
+  // hero section end
+  // -------------------------------

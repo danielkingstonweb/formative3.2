@@ -63,7 +63,21 @@ app.get('/allProductsFromDB',(req,res)=>{
     })
   })
 
-// <--! test function code ends here -->
+// test function code ends here
+
+// Getting the id for the modals
+app.get('/allPortfoliosFromDB/:id',(req,res)=>{
+  const id = req.params.id;
+  Portfolios.findById(id, function (err, portfolio){
+    if (err){
+      console.log(err);
+    } else {
+      console.log("Result : ", portfolio);
+      res.send(portfolio)
+    }
+  })
+})
+// Getting the id for the modals ends
 
 // <--!add portfolios function code starts here -->
 app.post('/addPortfolios',(req,res)=>{
