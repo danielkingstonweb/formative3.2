@@ -49,31 +49,32 @@
       border-right: solid 5px;
       padding-right: 0.5em;
       border-color: $accent;
-      font-size: 3rem;
+      font-size: 2.5vw;
     
     }
     &-subheader{
       height: 100%;
       margin: 0;
       padding-left: 0.5em;
-      font-size: 1.5rem;
+      font-size: 1.2vw;
     }
   
     &-author{
       @include bodyFont;
       font-weight: bold;
       margin-top: 0.5em;
+      font-size: 1vw;
     }
   
     &__body{
       @include bodyFont;
-      font-size: 1.5rem;
+      font-size: 1.4vw;
     }
   
     &-link{
       @include bodyFont;
       font-style: italic;
-      font-size: 1rem;
+      font-size: 1vw;
       color: $dark;
       text-decoration: none;
     }
@@ -87,3 +88,83 @@
   }
   // end of post of the day
   // -------------------------------
+
+//   Media queries
+
+@media screen and (max-width: 800px){
+
+    .potd{
+        height: 200vh;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .potd__right{
+        width: 100%;
+    }
+
+    .potd-header{
+        font-size: 9vw;
+    }
+
+    .potd-subheader{
+        font-size: 5vw;
+    }
+
+    .potd-author{
+        font-size: 2vw;
+    }
+
+
+    .potd-body{
+        font-size: 4vw;
+    }
+
+    .potd-link{
+        font-size: 2vw;
+    }
+
+    .potd__left{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .potd{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .potd__right{
+        width: 100%;
+    }
+
+    .potd-header{
+        font-size: 11vw;
+    }
+
+    .potd-subheader{
+        font-size: 7vw;
+    }
+
+    .potd-author{
+        font-size: 4vw;
+    }
+
+
+    .potd-body{
+        font-size: 6vw;
+    }
+
+    .potd-link{
+        font-size: 4vw;
+    }
+
+    .potd__left{
+        width: 100%;
+    }
+    
+}

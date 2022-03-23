@@ -1,4 +1,67 @@
 .footer{
     height: 30vh;
     width: 100%;
+    background: $light;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &__right{
+        background: $accent;
+        flex-basis: 30%;
+        height: 100%;
+        display: flex;
+    }
+
+    &-logo{
+        @include displayFont;
+        font-size: 4vw;
+        margin: auto
+    }
+
+    &__navigation{
+        margin: 3em;
+    }
+
+    &__ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+        padding: 0;
+        margin: 0;
+      } // end of ul
+
+      &-li {
+        @include bodyFont;
+        text-transform: capitalize;
+        cursor: pointer;
+      }  // end of li
+  
+      &-li:hover{
+        color: $accent;
+        position: relative;
+        bottom: 0.2em;
+        transition: 0.3s;
+      }
+  }
+
+
+  @media screen and (max-width: 800px){
+      .footer{
+          height: 40vh;
+      }
+
+      .footer__right{
+          flex-basis: 50%;
+      }
+
+      .footer__left{
+        flex-basis: 50%;
+    }
+
+      .footer-logo{
+          font-size: 6vw;
+      }
   }

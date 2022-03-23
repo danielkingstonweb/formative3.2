@@ -48,44 +48,36 @@ $(document).ready(function(){
                 <div class="img-preview" id="imgPreview">
                   <p class="img-preview__txt">When you add your image a preview will show up here.</p>
                 </div>
-
-                <!-- <label  for='portfolioImageurl'> Enter the image url </label> -->
-                  <!-- this is the correct ID for image_url input for addPortfolios -->
-                <input class="add-project__img modal-field__add" type="text" id='portfolioImageurl' placeholder="Enter Image Url">
-                <br><br>
+                <div class="preview__block">
+                  <input class="add-project__img modal-field__add" type="text" id='portfolioImageurl' placeholder="Enter Image Url">
+                  <br><br>
+                  <button id="imgPreviewBtn" class="modal-btn">Preview</button>
+                </div>
               </div>
                 
               <div class="modal-body__right">
-              <!-- <label for='portfolioName'> Enter name: </label> -->
+              <label for='portfolioName'> Enter name: </label>
               <input class="add-project__name modal-field__add" type="text" id='portfolioName' placeholder="Enter Project Name"> 
-              <!-- this is the correct ID for name input for addPortfolios -->
               <br><br>
-                    <!-- <label for='portfolioAuthor'> Enter Author: </label> -->
+                    <label for='portfolioAuthor'> Enter Author: </label>
                     <input class="add-project__author modal-field__add" type="text" id='portfolioAuthor' placeholder="Enter Project Author">
-                      <!-- this is the correct ID for author input for addPortfolios -->
                     <br><br>
 
-                  <!-- <label  for='portfolioDesc'> Enter Description: </label> -->
-                    <!-- this is the correct ID for desc input for addPortfolios -->
+                    <label  for='portfolioDesc'> Enter Description: </label>
                   <input class="add-project__desc modal-field__add" type="text" id='portfolioDesc' placeholder="Enter Project Description">
                   <br><br>
-            
         
-    
-        
-                  <!-- <label class="mr-5" for='portfolioUserurl'> Enter the user url </label> -->
-                  <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
-                    <!-- this is the correct ID for user_url input for addPortfolios -->
-                  <br><br>
-                  </div>      
-                    <!-- this button has the correct ID for running the addPortfolios function-->
+                    <label for='portfolioUserurl'> Enter the user url </label>
+                    <input class="add-project__link modal-field__add" type="text" id='portfolioUserurl' placeholder="Link to Project Details">
+                    <br><br>
+                  </div>   
                 </form>
                 `
               )
 
               $("#modalFooter").empty().append(
                 `
-                <button id="addaPortfolio" type="submit" >Add portfolio</button>
+                <button class="modal-btn" id="addaPortfolio" type="submit" >Add portfolio</button>
                 
                 `
               )
@@ -129,13 +121,15 @@ $(document).ready(function(){
             function imagePreview(){
 
               // let imageUrl = $('#portfolioImageurl').data('value');
+              $('.modal-btn').click(function(event){
+                event.preventDefault();
               let imageUrl = $('#portfolioImageurl').val();
-              $('#portfolioImageurl').change(function(){
                 console.log(imageUrl);
-                $("#imgPreview").css("background", `red`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center")
-              })
 
-            }
+                $("#imgPreview").empty().css("background", `url(${imageUrl})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center")
+              }
+
+              )}
 
             imagePreview();
           })
@@ -151,21 +145,20 @@ $(document).ready(function(){
   
                  $("#modalBody").empty().append(
                   `
+                  <div class="delete__form">
+                  <h3 class="delete__form-note">Anything deleted will be un-recoverable</h3>
                   <form id="deletePortfolioForm">
-                  <h1> Delete a Portfolio</h1>   <br><br>
-                  <label for="deletePortfolio"> Delete a Portfolio by ID</label>
-                  <input type="text" id="deletePortfolioInput" name="delete-port" >     
-                  <br><br>
-              
-                  <!-- this is the button with the id tag to run the delete function -->
-            
-                </form>
+                    <label for="deletePortfolio"> Delete a Portfolio by ID</label>
+                    <input type="text" id="deletePortfolioInput" name="delete-port" >     
+                    <br><br>
+                  </form>
+                </div>
                   `
                 )
 
                 $("#modalFooter").empty().append(
                   `
-                  <button id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete Portfolio</button>
+                  <button class="modal-btn" id="deleteaPortfolio" name="deleteaPortfolioButton" type="submit">Delete Portfolio</button>
                   `
                 )
 
@@ -205,35 +198,43 @@ $(document).ready(function(){
     
                    $("#modalBody").empty().append(
                     `
-                    <form id="updPortfolioForm">
-                    <h1> Update a Portfolio</h1>   <br><br>
-            
-                    <label for='updPortfoliosid'> Insert ID: </label>
-                    <input type="text" id='updPortfoliosid'>                
-                    <br><br>
-            
-                    <label for='updPorfoliosname'> Update name: </label>
-                    <input type="text" id='updPorfoliosname'>   
-                    <br><br>
-                
-                    <label for='updPortfoliosauthor'> Update Author: </label>
-                    <input type="text" id='updPortfoliosauthor'>                     
-                    <br><br>
-            
-                
-                     <label  for='updImageurl'> Update the image url: </label>
-                    <input type="text"id='updImageurl' >                
-                    <br><br>
-            
-                    <label for='updUserurl'> Update the user url: </label>
-                    <input type="text" id='updUserurl'>
-                    <br><br>
-            
-                    <label  for='updPortfoliosdesc'> Update Description: </label>       
-                    <input type="text" id='updPortfoliosdesc'>
-                    <br><br>
+                    <form class="modal-body__add">
+                    <div class="modal-body__left">
+                    <div class="img-preview" id="imgPreview">
+                      <p class="img-preview__txt">When you add your image a preview will show up here.</p>
+                    </div>
+                    <div class="preview__block">
+                      <input class="add-project__img modal-field__add" type="text"id='updImageurl' placeholder="Update image URL">                
+                      <br><br>
+                      
+                      <button id="imgPreviewBtn" class="modal-btn">Preview</button>
+                    </div>
+                  </div>
+                    
+                  <div class="modal-body__right">
 
-                </form>
+                  <label for='updPortfoliosid'> Insert ID:         </label>  
+                  <input class="add-project__name modal-field__add" type="text" id='updPortfoliosid' placeholder="Enter Project ID">  
+                  <br><br>
+              
+                  <label for='updPorfoliosname'> Update name: </label>
+                  <input class="add-project__name modal-field__add" type="text" id='updPorfoliosname' placeholder="Update project name">   
+                  <br><br>
+              
+                        <label for='updPortfoliosauthor'> Update Author: </label>
+                        <input class="add-project__author modal-field__add" type="text" id='updPortfoliosauthor' placeholder="Update project description">                     
+                        <br><br>
+              
+                      <label  for='updPortfoliosdesc'> Update Description: </label>       
+                      <input class="add-project__desc modal-field__add" type="text" id='updPortfoliosdesc' placeholder="Update project description">
+                      <br><br>
+              
+                          
+                        <label for='updUserurl'> Update the user url: </label>
+                        <input class="add-project__link modal-field__add" type="text" id='updUserurl' placeholder="Update link to project">
+                        <br><br>
+                      </div>   
+                    </form>
                     `
                   )
                   $("#modalFooter").empty().append(
@@ -246,9 +247,26 @@ $(document).ready(function(){
                   $("#modalFooter").empty().append(
                     `
                         
-            <button id="editPortfolio" type="submit" >Edit Portfolio</button>
+            <button class="modal-btn" id="editPortfolio" type="submit" >Edit Portfolio</button>
                     `
                   )
+
+                  function imagePreviewEdit(){
+
+                    // let imageUrl = $('#portfolioImageurl').data('value');
+                    $('.modal-btn').click(function(event){
+                      event.preventDefault();
+                    let imageUrl = $('#updImageurl').val();
+                      console.log(imageUrl);
+      
+                      $("#imgPreview").empty().css("background", `url(${imageUrl})`).css("background-size", "cover").css("background-repeat", "no-repeat").css("background-position-x", "center")
+                    }
+      
+                    )}
+      
+                  imagePreviewEdit();
+
+                  
 
 
 // <--! function for updating portfolios starts here  !-->

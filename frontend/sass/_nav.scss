@@ -50,9 +50,7 @@
         margin: 0;
       } // end of ul
       &__li {
-        font-family: sculpin, sans-serif;
-        font-weight: 400;
-        font-style: normal;
+        @include bodyFont;
         text-transform: capitalize;
         cursor: pointer;
       }  // end of li
